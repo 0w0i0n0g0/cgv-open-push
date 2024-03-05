@@ -102,9 +102,9 @@ def main(cookies, headers, json_data, target):
                         finally:
                             logging.debug(f'삭제된 요소 : {d}')
                 if added_result != "":
-                    send_ntfy_push(str(added_result))
+                    send_ntfy_push('추가된 요소 : ' + str(added_result))
                 if deleted_result != "":
-                    send_ntfy_push(str(deleted_result))
+                    send_ntfy_push('삭제된 요소 : ' + str(deleted_result))
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
             # 카운터 증가

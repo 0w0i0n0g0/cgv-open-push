@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import re
 import charset_normalizer
 import requests
 import xml.etree.ElementTree as ET
@@ -73,8 +74,7 @@ def extract_playdays(xml_string):
     return ET.tostring(playdays, encoding='unicode', method='xml') if playdays is not None else None
 
 def extract_format_date(xml_string):
-    # 문자열로 주어진 XML을 파싱
-    root = ET.fromstring(xml_string)
-    # 'FORMAT_DATE' 태그를 찾아서 해당 내용을 리턴
-    format_date = root.find('.//FORMAT_DATE')
-    return format_date.text if format_date is not None else None
+    # 정규 표현식을 사용하여 <FORMAT_DATE>과 </FORMAT_DATE> 사이의 모든 문자열 찾기
+    pattern = re.compile(r'<FORMAT_DATE>(.*?)</FORMAT_DATE>')
+    # 찾은 문자열을 ','로 구분하여 하나의 문자열로 연결하여 반환
+    return ', '.join(pattern.findall(xml_string))
