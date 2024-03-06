@@ -1,8 +1,8 @@
-from logging.handlers import RotatingFileHandler
 import time
 import atexit
 import threading
 from cgv_open_push_function import *
+from logging.handlers import RotatingFileHandler
 from diff_match_patch import diff_match_patch
 
 url = 'http://ticket.cgv.co.kr/CGV2011/RIA/CJ000.aspx/CJ_TICKET_SCHEDULE_TOTAL_PLAY_YMD'
@@ -35,7 +35,9 @@ headers = {
     'X-Requested-With': 'XMLHttpRequest',
 }
 
+# 변경사항을 확인할 타겟의 json_data
 json_data = [
+    # 듄-파트2 용산아이파크몰 IMAX관
     {
         "REQSITE": "x02PG4EcdFrHKluSEQQh4A==",
         "TheaterCd": "LMP+XuzWskJLFG41YQ7HGA==",
@@ -46,27 +48,16 @@ json_data = [
         "Subtitle_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
         "SOUNDX_YN": "nG6tVgEQPGU2GvOIdnwTjg==",
         "Third_Attr_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
-        "Language": "zqWM417GS6dxQ7CIf65+iA=="
+        "Language": "zqWM417GS6dxQ7CIf65+iA==",
     },
-    {
-    "REQSITE": "x02PG4EcdFrHKluSEQQh4A==",
-    "TheaterCd": "LMP+XuzWskJLFG41YQ7HGA==",
-    "ISNormal": "3y+GIXzg3xKpOjlKjH8+Fg==",
-    "MovieGroupCd": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "ScreenRatingCd": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "MovieTypeCd": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "Subtitle_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "SOUNDX_YN": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "Third_Attr_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
-    "Language": "zqWM417GS6dxQ7CIf65+iA=="
-    }
 ]
 
+# 변경사항을 확인할 타겟 이름 json_data 순서대로
 target = [
     "듄-파트2 용아맥 오픈 알림 서버가",
-    "용산아이파크몰 오픈 알림 서버가"
 ]
 
+# 메인 함수 
 def main(cookies, headers, json_data, target):
     atexit.register(send_ntfy_push_server, f"{target} 종료되었습니다.")
     try:
@@ -79,9 +70,10 @@ def main(cookies, headers, json_data, target):
             time.sleep(2)
             # 2번에 새 응답 저장
             response2 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target))
-            # 비교
+            # 새 응답과 저장된 이전 응답이 다르다면
             if response1 != response2:
                 dmp = diff_match_patch()
+                # diff에 응답끼리 다른 부분을 추출 {(-1, "삭제된 부분"), (1, "추가된 부분")}
                 diff = dmp.diff_main(response1, response2)
                 dmp.diff_cleanupSemantic(diff)
                 added_result = ""
@@ -92,33 +84,36 @@ def main(cookies, headers, json_data, target):
                             added_result += extract_format_date(d[1])
                         except:
                             added_result += d[1]
-                        finally:
-                            logging.debug(f'추가된 요소 : {d}')
                     if d[0] == -1:
                         try:
                             deleted_result += extract_format_date(d[1])
                         except:
                             deleted_result += d[1]
-                        finally:
-                            logging.debug(f'삭제된 요소 : {d}')
                 if added_result != "":
+                    logging.debug(f'추가된 요소 : {added_result}')
+                    # 추가된 변경사항 푸시알림 보내기
                     send_ntfy_push('추가된 요소 : ' + str(added_result))
                 if deleted_result != "":
-                    send_ntfy_push('삭제된 요소 : ' + str(deleted_result))
+                    logging.debug(f'삭제된 요소 : {deleted_result}')
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
             # 카운터 증가
             counter += 1
+            # 1800번 반복 후 (약 1시간)
             if counter >= 1800:
+                # 서버 실행중 푸시알림 보내기
                 send_ntfy_push_server(f"{target} 실행중입니다.")
+                # 카운터 초기화
                 counter = 0
     except Exception as e:
         send_ntfy_push_server(f"{target} 예외발생으로 종료되었습니다.")
         logging.debug(f'예외발생 : {e}')
 
+# 로그 저장 (최대 10MB씩 3개 백업본 저장)
 handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=10*1024*1024, backupCount=3, encoding='utf-8')]
 logging.basicConfig(handlers=handlers, level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
 
+# 입력된 json_data에 대해 쓰레드로 모두 실행
 for data in enumerate(json_data):
     t = threading.Thread(target=main, args=(cookies, headers, data[1], target[data[0]]))
     t.start()
