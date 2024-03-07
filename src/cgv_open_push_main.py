@@ -53,23 +53,24 @@ json_data = [
 ]
 
 # 변경사항을 확인할 타겟 이름 json_data 순서대로
-target = [
-    "듄-파트2 용아맥 오픈 알림 서버가",
+target_name = [
+    "DUNE-PART2-YONGSAN-IMAX",
 ]
 
 # 메인 함수 
-def main(cookies, headers, json_data, target):
-    atexit.register(send_ntfy_push_server, f"{target} 종료되었습니다.")
+def main(url, cookies, headers, json_data, target_name):
+    atexit.register(send_ntfy_push_server, f"{target_name}\n서버가 종료되었습니다.", target_name)
     try:
         # 첫 응답 저장
-        send_ntfy_push_server(f"{target} 시작되었습니다.")
-        response1 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target))
+        send_ntfy_push_server(f"{target_name}\n서버가 시작되었습니다.", target_name)
+        response1 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target_name))
         response2 = ""
         counter = 0
         while True:
-            time.sleep(2)
+            # 5초마다 새로고침
+            time.sleep(5)
             # 2번에 새 응답 저장
-            response2 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target))
+            response2 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target_name))
             # 새 응답과 저장된 이전 응답이 다르다면
             if response1 != response2:
                 dmp = diff_match_patch()
@@ -79,35 +80,40 @@ def main(cookies, headers, json_data, target):
                 added_result = ""
                 deleted_result =""
                 for d in diff:
+                    ## d[0]가 1이면 추가된 요소
                     if d[0] == 1:
                         try:
                             added_result += extract_format_date(d[1])
                         except:
                             added_result += d[1]
+                    ## d[0]가 -1이면 삭제된 요소
                     if d[0] == -1:
                         try:
                             deleted_result += extract_format_date(d[1])
                         except:
                             deleted_result += d[1]
+                #추가된 요소가 있으면
                 if added_result != "":
                     logging.debug(f'추가된 요소 : {added_result}')
                     # 추가된 변경사항 푸시알림 보내기
-                    send_ntfy_push('추가된 요소 : ' + str(added_result))
+                    send_ntfy_push('추가된 요소 : ' + str(added_result), target_name)
+                #삭제된 요소가 있으면
                 if deleted_result != "":
+                    #로그만 남기기
                     logging.debug(f'삭제된 요소 : {deleted_result}')
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
             # 카운터 증가
             counter += 1
-            # 1800번 반복 후 (약 1시간)
-            if counter >= 1800:
+            # (약 1시간)
+            if counter >= 720:
                 # 서버 실행중 푸시알림 보내기
-                send_ntfy_push_server(f"{target} 실행중입니다.")
+                send_ntfy_push_server(f"{target_name}\n서버가 실행중입니다.", target_name)
                 # 카운터 초기화
                 counter = 0
     except Exception as e:
-        send_ntfy_push_server(f"{target} 예외발생으로 종료되었습니다.")
-        logging.debug(f'예외발생 : {e}')
+        send_ntfy_push_server(f"{target_name}\n서버가 예외발생으로 종료되었습니다.", target_name)
+        logging.debug(f'{target_name}\n서버에서 예외발생 : {e}')
 
 # 로그 저장 (최대 10MB씩 3개 백업본 저장)
 handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=10*1024*1024, backupCount=3, encoding='utf-8')]
@@ -115,5 +121,5 @@ logging.basicConfig(handlers=handlers, level=logging.DEBUG, format='%(asctime)s:
 
 # 입력된 json_data에 대해 쓰레드로 모두 실행
 for data in enumerate(json_data):
-    t = threading.Thread(target=main, args=(cookies, headers, data[1], target[data[0]]))
+    t = threading.Thread(target=main, args=(url, cookies, headers, data[1], target_name[data[0]]))
     t.start()
