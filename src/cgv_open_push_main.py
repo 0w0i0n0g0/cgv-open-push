@@ -57,7 +57,7 @@ target_name = [
     "DUNE-PART2-YONGSAN-IMAX",
 ]
 
-# 메인 함수 
+# 메인 함수
 def main(url, cookies, headers, json_data, target_name):
     atexit.register(send_ntfy_push_server, f"{target_name}\n서버가 종료되었습니다.", target_name)
     try:
@@ -96,7 +96,7 @@ def main(url, cookies, headers, json_data, target_name):
                 if added_result != "":
                     logging.debug(f'추가된 요소 : {added_result}')
                     # 추가된 변경사항 푸시알림 보내기
-                    send_ntfy_push('추가된 요소 : ' + str(added_result), target_name)
+                    send_ntfy_push(str(added_result), target_name)
                 #삭제된 요소가 있으면
                 if deleted_result != "":
                     #로그만 남기기
@@ -113,7 +113,7 @@ def main(url, cookies, headers, json_data, target_name):
                 counter = 0
     except Exception as e:
         send_ntfy_push_server(f"{target_name}\n서버가 예외발생으로 종료되었습니다.", target_name)
-        logging.debug(f'{target_name}\n서버에서 예외발생 : {e}')
+        logging.debug(f'{target_name}서버에서 예외발생 : {e}')
 
 # 로그 저장 (최대 10MB씩 3개 백업본 저장)
 handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=10*1024*1024, backupCount=3, encoding='utf-8')]
