@@ -31,6 +31,7 @@ By_0w0i0n0g0
 ## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는?
 
 - 듄-파트2 / 용산아이파크몰 / IMAX관
+- 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
 
 <br>
 <br>
@@ -51,7 +52,7 @@ By_0w0i0n0g0
 
 ### 2. 구독 추가
 
-다음과 같이 Topic name에 밑의 리스트 중에서 골라 입력해주세요.
+먼저 사진과 같이 Topic name에 밑의 리스트 중에서 알림받고 싶은 것을 골라 입력해주세요. (정확히 입력해야 합니다.)
 
 <p align="center">
   <img src="./img/topic-name.png" width="300"/>
@@ -60,14 +61,23 @@ By_0w0i0n0g0
 ---
 
 - 듄-파트2 / 용산아이파크몰 / IMAX관
+- ### ```DUNE-PART2-YONGSAN-IMAX```
+> (복사 붙여넣기 해주세요.)
 
-  - ### ```DUNE-PART2-YONGSAN-IMAX```
+<br>
+
+- 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
+
+- ### ```GODZILLA-KONG```
+> (복사 붙여넣기 해주세요.)
+
+<br>
 
 (요청에 따라 더 추가될 예정입니다.)
 
 ---
 
-다음과 같이 Use another server 활성화 후, Service URL에
+그리고 다음과 같이 Use another server 활성화 후, Service URL에
 ### ```http://serverkorea.duckdns.org```
 를 입력해주세요.
 
@@ -83,20 +93,31 @@ By_0w0i0n0g0
 
 ### 🎉 이제 다 끝났어요!
 
+#### 도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!
+
 ### 알람은 이렇게 와요.
 
+
 <p align="center">
-  <img src="./img/dune-part2-week3.png" width="300"/>
+  <img src="./img/dune-part2-week4.png" width="300"/>
 </p>
 
-- 실제 테스트 서버에서 2024/03/06 수요일에  CGV 용산아이파크몰 IMAX관 듄 파트2 3주차 (2024/03/12 ~ 2024/03/19) 예매 오픈 당시 실시간으로 울린 알림이에요.
+- 실제 가동중인 서버에서 2024/03/19 ~ 2024/03/20에  CGV 용산아이파크몰 IMAX관 듄 파트2 4주차 (2024/03/23 ~ 2024/03/29) 예매 오픈 당시 실시간으로 울린 알림이에요.
+
+<br>
+<br>
+
+> 이전 알림 더보기
+>> [CGV 용산아이파크몰 IMAX관 듄 파트2 3주차](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/dune-part2-week3.png)
+>>
+>> [CGV 용산아이파크몰 IMAX관 듄 파트2 4주차](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/dune-part2-week4.png)
 
 <br>
 <br>
 
 ## Description
 
--
+- 
 
 <br>
 <br>
