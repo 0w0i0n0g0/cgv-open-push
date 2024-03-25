@@ -1,18 +1,10 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 import re
-import charset_normalizer
 import requests
 import xml.etree.ElementTree as ET
 import logging
-
-def save_to_text_file(text, filename):
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(text)
-
-def load_text_from_file(filename):
-    with open(filename, 'r', encoding='utf-8') as file:
-        return file.read()
+from cgv_open_push_global_variable import ntfy_token
 
 # request의 응답 객체의 시간과 현재시간의 차이를 계산
 def get_time_difference(response):
@@ -21,7 +13,7 @@ def get_time_difference(response):
     # 추출한 날짜 문자열을 datetime 객체로 변환
     response_time = datetime.strptime(response_time_str, '%a, %d %b %Y %H:%M:%S GMT')
     # 현재 시간을 UTC로 가져오기
-    current_time = datetime.utcnow()
+    current_time = datetime.now(timezone.utc).replace(tzinfo = None)
     # 응답 시간과 현재 시간을 비교
     time_difference = current_time - response_time
     # 시간 차이를 반환
@@ -53,11 +45,22 @@ def send_ntfy_push(result, target_name):
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         # ntfy 서버 토큰
-        'Authorization': "",
+        'Authorization': ntfy_token,
     }
     data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
     logging.debug(f'{target_name} 서버의 send_ntfy_push : {response}')
+
+# 정상작동 확인용 푸시알림 보내기
+def send_ntfy_push_health_check(text, target_name):
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        # ntfy 서버 토큰
+        'Authorization': ntfy_token,
+    }
+    data = f'{target_name}\n{text}'.encode()
+    response = requests.post(f'http://serverkorea.duckdns.org/SERVER', headers=headers, data=data)
+    logging.debug(f'{target_name} 서버의 send_ntfy_push_health_check : {response}')
 
 # 서버 정상작동 푸시알림 보내기
 def send_ntfy_push_server(string, target_name):
@@ -80,5 +83,12 @@ def extract_playdays(xml_string):
 def extract_format_date(xml_string):
     # 정규 표현식을 사용하여 <FORMAT_DATE>과 </FORMAT_DATE> 사이의 모든 문자열 찾기
     pattern = re.compile(r'<FORMAT_DATE>(.*?)</FORMAT_DATE>')
+    # 찾은 문자열을 ', '로 구분하여 하나의 문자열로 연결하여 반환
+    return ', '.join(pattern.findall(xml_string))
+
+# 문자열과 태그를 받아서 해당 태그 사이의 문자열을 모두 반환
+def extract_xml_content_by_tag(xml_string, tag):
+    # 동적으로 정규 표현식 패턴 생성
+    pattern = re.compile(r'<{}>(.*?)</{}>'.format(tag, tag))
     # 찾은 문자열을 ', '로 구분하여 하나의 문자열로 연결하여 반환
     return ', '.join(pattern.findall(xml_string))
