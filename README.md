@@ -28,7 +28,7 @@ By_0w0i0n0g0
 <br>
 <br>
 
-## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는?
+## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/03/28 기준)
 
 - 듄-파트2 / 용산아이파크몰 / IMAX관
 - 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
@@ -124,7 +124,38 @@ By_0w0i0n0g0
 
 ## Features
 
-- 
+- Send Push Notification
+  - http://serverkorea.duckdns.org/{target_name}
+    - Notification to subscribers / When new date detected from *target_name*.
+
+- Health Check
+  - http://ntfy.sh/CGVOPENPUSHSERVER
+    - Notification to admin / every 1 hour / Is main python code running without error?
+  - http://serverkorea.duckdns.org/SERVER
+    - Notification to admin / every 1 hour / Is private ntfy server is running without error?
+
+- Run Multiple Python Servers with Threading
+  - for *json_data* in *json_data_list*
+
+- Monitoring Server Status
+  - http://192.168.0.17 : nginx
+  - http://192.168.0.17:3000 : Grafana
+  - http://192.168.0.17:9091 : Prometheus
+  - http://192.168.0.17/monitoring : eZ Server monitor
+  - http://serverkorea.duckdns.org : private ntfy server
+
+- Autostart after Boot
+  - sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+- Logging
+  - cgv-open-push.log
+    - maxBytes=5\*1024\*1024, backupCount=3, encoding='utf-8'
+    - Includes HTTP status codes, HTTP response time, changes of date list and Python Error message.
+
+- Testing
+  - cgv_open_push_test.py
+    - test_send_curl_to_cgv_multiple
+    - test_send_ntfy_push_health_check
 
 <br>
 <br>
