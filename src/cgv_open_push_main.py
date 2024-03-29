@@ -1,3 +1,5 @@
+import os
+import sys
 import time
 import atexit
 import threading
@@ -8,13 +10,12 @@ from diff_match_patch import diff_match_patch
 
 # 메인 로직
 def main(url, cookies, headers, json_data, target_name):
+    # 종료 시 ntfy로 서버 종료 알림 보내기
     atexit.register(send_ntfy_push_server, f"{target_name}\n서버가 종료되었습니다.", target_name)
     try:
         # 첫 응답 저장
-        send_ntfy_push_server(f"{target_name}\n서버가 시작되었습니다.", target_name)
         response1 = extract_playdays(send_curl_to_cgv_multiple(url, cookies, headers, json_data, target_name))
         response2 = ""
-        counter = 0
         while True:
             # 5초마다 새로고침
             time.sleep(5)
@@ -43,33 +44,40 @@ def main(url, cookies, headers, json_data, target_name):
                             deleted_result += d[1]
                 #추가된 요소가 있으면
                 if added_result != "":
-                    logging.debug(f'추가된 요소 : {added_result}')
+                    logging.info(f'{target_name} 서버에서 추가된 요소 : {added_result}')
                     # 추가된 변경사항 푸시알림 보내기
-                    send_ntfy_push(str(added_result), target_name)
+                    try:
+                        send_ntfy_push(str(added_result), target_name)
+                    except Exception as e:
+                        send_ntfy_push_server(f"{target_name}\n서버에서 푸시 알림 전송 중 오류 발생🚨\n{e}", target_name)
+                        send_ntfy_push_health_check(f"서버에서 푸시 알림 전송 중 오류 발생🚨\n{e}", target_name)
+                        logging.error(f'{target_name} 서버에서 푸시 알림 전송 중 오류 발생 : {e}')
+                        # 5초 대기 후 다시 알림 보내기 시도
+                        time.sleep(5)
+                        send_ntfy_push(str(added_result), target_name)
                 #삭제된 요소가 있으면
                 if deleted_result != "":
                     #로그만 남기기
-                    logging.debug(f'삭제된 요소 : {deleted_result}')
+                    logging.info(f'{target_name} 서버에서 삭제된 요소 : {deleted_result}')
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
-            # 카운터 증가
-            counter += 1
-            # (약 1시간)
-            if counter >= 720:
-                # 서버 실행중 푸시알림 보내기
-                send_ntfy_push_server(f"{target_name}\n서버가 실행중입니다.", target_name)
-                send_ntfy_push_health_check(extract_xml_content_by_tag(response2, "FORMAT_DATE"), target_name)
-                # 카운터 초기화
-                counter = 0
+    # 오류 발생 시
     except Exception as e:
-        send_ntfy_push_server(f"{target_name}\n서버가 예외발생으로 종료되었습니다.", target_name)
-        logging.debug(f'{target_name}서버에서 예외발생 : {e}')
+        send_ntfy_push_server(f"{target_name}\n서버에서 오류 발생🚨\n{e}", target_name)
+        send_ntfy_push_health_check(f"서버에서 오류 발생🚨\n{e}", target_name)
+        logging.error(f'{target_name} 서버에서 오류 발생 : {e}')
+        # 다시 실행
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 # 로그 저장 (최대 5MB씩 3개 백업본 저장)
 handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=5*1024*1024, backupCount=3, encoding='utf-8')]
-logging.basicConfig(handlers=handlers, level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
+logging.basicConfig(handlers=handlers, level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
+
+# 코드 시작 시 개인 서버에 알림 보내기
+send_ntfy_push_health_check("서버가 시작되었습니다.", "raspberrypi")
 
 # 입력된 json_data에 대해 쓰레드로 모두 실행
 for data in enumerate(json_data):
     t = threading.Thread(target=main, args=(url, cookies, headers, data[1], target_name[data[0]]))
     t.start()
+    time.sleep(2)
