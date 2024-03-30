@@ -30,7 +30,7 @@ def send_curl_to_cgv_multiple(url, cookies, headers, json_data, target_name):
     )
     # 응답 본문 추출
     response_body = response.content
-    logging.debug(f'{target_name} 서버가 응답에 걸린 시간 : {get_time_difference(response)}')
+    logging.info(f'{target_name} 서버가 응답에 걸린 시간 : {get_time_difference(response)}')
     # UTF-8 디코딩
     response_text = response_body.decode('utf-8-sig')
     # JSON 데이터 파싱
@@ -49,7 +49,7 @@ def send_ntfy_push(result, target_name):
     }
     data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
-    logging.debug(f'{target_name} 서버의 send_ntfy_push : {response}')
+    logging.info(f'{target_name} 서버의 send_ntfy_push : {response}')
 
 # 정상작동 확인용 푸시알림 보내기
 def send_ntfy_push_health_check(text, target_name):
@@ -60,7 +60,7 @@ def send_ntfy_push_health_check(text, target_name):
     }
     data = f'{target_name}\n{text}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/SERVER', headers=headers, data=data)
-    logging.debug(f'{target_name} 서버의 send_ntfy_push_health_check : {response}')
+    logging.info(f'{target_name} 서버의 send_ntfy_push_health_check : {response}')
 
 # 서버 정상작동 푸시알림 보내기
 def send_ntfy_push_server(string, target_name):
@@ -69,7 +69,7 @@ def send_ntfy_push_server(string, target_name):
     }
     data = f'{string}'.encode()
     response = requests.post('http://ntfy.sh/CGVOPENPUSHSERVER', headers=headers, data=data)
-    logging.debug(f'{target_name} 서버의 send_ntfy_push_server : {response}')
+    logging.info(f'{target_name} 서버의 send_ntfy_push_server : {response}')
 
 # XML 객체를 받아서 PlayDays 태그를 XML 객체로 반환
 def extract_playdays(xml_string):
