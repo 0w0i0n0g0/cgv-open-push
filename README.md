@@ -11,6 +11,13 @@ By_0w0i0n0g0
 <br>
 <br>
 
+## [서버가 작동 중인지 여기서 확인하세요!](http://serverkorea.duckdns.org:5000)
+
+###  http://serverkorea.duckdns.org:5000
+
+<br>
+<br>
+
 ## 목차
 
 [알림 받기](#알림-받기)
@@ -28,7 +35,7 @@ By_0w0i0n0g0
 <br>
 <br>
 
-## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/03/28 기준)
+## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/04/02 기준)
 
 - 듄-파트2 / 용산아이파크몰 / IMAX관
 - 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
@@ -126,36 +133,50 @@ By_0w0i0n0g0
 
 - Send Push Notification
   - http://serverkorea.duckdns.org/{target_name}
-    - Notification to subscribers / When new date detected from *target_name*.
+    - Push notification when new date detected from *target_name*.
 
 - Health Check
+  - http://serverkorea.duckdns.org:5000
+    - Server status
   - http://ntfy.sh/CGVOPENPUSHSERVER
-    - Notification to admin / every 1 hour / Is main python code running without error?
   - http://serverkorea.duckdns.org/SERVER
-    - Notification to admin / every 1 hour / Is private ntfy server is running without error?
+    - Push notification when server start, end and error.
 
-- Run Multiple Python Servers with Threading
-  - for *json_data* in *json_data_list*
-
-- Monitoring Server Status
-  - http://192.168.0.17 : nginx
-  - http://192.168.0.17:3000 : Grafana
-  - http://192.168.0.17:9091 : Prometheus
-  - http://192.168.0.17/monitoring : eZ Server monitor
-  - http://serverkorea.duckdns.org : private ntfy server
-
-- Autostart after Boot
-  - sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+- Server Port
+  - Internal
+    - http://192.168.0.17 : nginx
+    - http://192.168.0.17/monitoring : eZ Server monitor
+    - http://192.168.0.17:9999 : private ntfy server
+    - http://192.168.0.17:9090 : matrix
+    - http://192.168.0.17:3000 : Grafana
+    - http://192.168.0.17:9010 : Prometheus
+    - http://192.168.0.17:5000: Server status
+  - External
+    - http://serverkorea.duckdns.org : private ntfy server
+    - http://serverkorea.duckdns.org:5000 : Server status
 
 - Logging
   - cgv-open-push.log
     - maxBytes=5\*1024\*1024, backupCount=3, encoding='utf-8'
-    - Includes HTTP status codes, HTTP response time, changes of date list and Python Error message.
 
 - Testing
   - cgv_open_push_test.py
     - test_send_curl_to_cgv_multiple
     - test_send_ntfy_push_health_check
+
+- Autostart after Boot
+  - sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+    - @bash /home/pi/afterstart.sh
+  - afterstart.sh
+
+```sh
+#!/bin/bash
+python cgv_open_push_main.py &
+python cgv_open_push_status.py &
+echo 'raspberry' | sudo -S ntfy serve
+cd prometheus
+./prometheus --web.listen-address=:9010
+```
 
 <br>
 <br>
