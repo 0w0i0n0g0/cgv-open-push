@@ -35,89 +35,116 @@ By_0w0i0n0g0
 <br>
 <br>
 
-## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/04/02 기준)
+## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/04/03 기준)
 
 - 듄-파트2 / 용산아이파크몰 / IMAX관
 - 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
 
 <br>
-<br>
 
-## 알림 받기
+### 추가 건의나 문의사항은 [issues](https://github.com/0w0i0n0g0/cgv-open-push/issues)에 남겨주세요!
 
-<br>
-
-### 1. 먼저 ntfy 앱을 다운받으세요.
-
-[구글 플레이스토어](https://play.google.com/store/apps/details?id=io.heckel.ntfy)
-
-[애플 앱스토어](https://apps.apple.com/us/app/ntfy/id1625396347)
-
-당연히 예매 오픈 알림을 받으려면 설정에서 앱 알림을 켜줘야겠죠? 😉
+https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 <br>
+<br>
 
-### 2. 구독 추가
+## 🔔 알림 받는 방법!
 
-먼저 사진과 같이 Topic name에 밑의 리스트 중에서 알림받고 싶은 것을 골라 입력해주세요. (정확히 입력해야 합니다.)
+### 먼저 ntfy 앱을 다운받으세요.
+
+- [구글 플레이스토어](https://play.google.com/store/apps/details?id=io.heckel.ntfy)
+
+- [애플 앱스토어](https://apps.apple.com/us/app/ntfy/id1625396347)
+
+> 예매 오픈 알림을 받으려면 설정에서 앱 알림을 허용해주세요.
+
+<br>
+
+### 구독을 추가하세요.
+
+알림을 받기 위해 ```Add subscription```을 눌러 구독을 추가해야 해요.
+
+먼저 밑의 예시와 같이 ```Topic name```에 밑의 리스트 중에서 알림받고 싶은 것을 골라 입력해주세요. 
+
+> 정확히 입력해야 합니다.
 
 <p align="center">
   <img src="./img/topic-name.png" width="300"/>
 </p>
 
----
-
-- 듄-파트2 / 용산아이파크몰 / IMAX관
-- ### ```DUNE-PART2-YONGSAN-IMAX```
-> (복사 붙여넣기 해주세요.)
-
 <br>
-
-- 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
-
-- ### ```GODZILLA-KONG```
-> (복사 붙여넣기 해주세요.)
-
-<br>
-
-(요청에 따라 더 추가될 예정입니다.)
 
 ---
 
-그리고 다음과 같이 Use another server 활성화 후, Service URL에
-### ```http://serverkorea.duckdns.org```
+#### 듄-파트2 / 용산아이파크몰 / IMAX관
+
+```
+DUNE-PART2-YONGSAN-IMAX
+```
+
+> 복사 붙여넣기 해주세요.
+
+<br>
+
+#### 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
+
+```
+GODZILLA-KONG
+```
+
+> 복사 붙여넣기 해주세요.
+
+---
+
+<br>
+
+
+그리고 다음과 같이 ```Use another server```를 활성화 후, ```Service URL```에
+
+```
+http://serverkorea.duckdns.org
+```
+
+> 복사 붙여넣기 해주세요.
+
 를 입력해주세요.
 
 <p align="center">
   <img src="./img/use-another-server.png" width="300"/>
 </p>
 
-<br>
-
-#### 만약 오류메세지가 뜨면서 실패하게 된다면 1시간 이상 기다렸다가 다시 시도해주세요. 개인 서버이기 때문에 현실적으로 24시간 정상작동을 보장할 수 없습니다.
+> 만약 오류메세지가 뜨면서 실패하게 된다면 조금 기다린 후 다시 시도해주세요. 개인 서버로 운영 중이여서 24시간 정상작동을 보장할 수 없습니다.
 
 <br>
+<br>
 
-### 🎉 이제 다 끝났어요!
+## 🎉 이제 다 끝났어요!
 
-#### 도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!
+__도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
+
+<br>
 
 ### 알람은 이렇게 와요.
 
 
 <p align="center">
-  <img src="./img/dune-part2-week4.png" width="300"/>
+  <img src="./img/example.png" width="300"/>
 </p>
 
-- 실제 가동중인 서버에서 2024/03/19 ~ 2024/03/20에  CGV 용산아이파크몰 IMAX관 듄 파트2 4주차 (2024/03/23 ~ 2024/03/29) 예매 오픈 당시 실시간으로 울린 알림이에요.
+> 실제 가동중인 서버에서 CGV 용산아이파크몰 IMAX관 듄 파트2 4주차 (2024/03/23 ~ 2024/03/29) 예매 오픈 당시 실시간으로 울린 알림이에요.
 
 <br>
 <br>
 
 > 이전 알림 더보기
->> [CGV 용산아이파크몰 IMAX관 듄 파트2 3주차](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/dune-part2-week3.png)
+>> [CGV 용산아이파크몰 IMAX관 듄 파트2 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-3.png)
 >>
->> [CGV 용산아이파크몰 IMAX관 듄 파트2 4주차](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/dune-part2-week4.png)
+>> [CGV 용산아이파크몰 IMAX관 듄 파트2 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-4.png)
+>>
+>> [CGV 용산아이파크몰 IMAX관 듄 파트2 (5)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-5.png)
+>>
+>> [CGV 용산아이파크몰 IMAX관 고질라 X 콩: 뉴 엠파이어 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/godzilla-kong-1.png)
 
 <br>
 <br>
@@ -169,7 +196,7 @@ By_0w0i0n0g0
     - @bash /home/pi/afterstart.sh
   - afterstart.sh
 
-```sh
+```bash
 #!/bin/bash
 python cgv_open_push_main.py &
 python cgv_open_push_status.py &
