@@ -35,10 +35,10 @@ By_0w0i0n0g0
 <br>
 <br>
 
-## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/04/03 기준)
+## 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/04/04 기준)
 
-- 듄-파트2 / 용산아이파크몰 / IMAX관
-- 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
+- 듄-파트2 / 용산아이파크몰 / IMAX 관
+- 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX 관
 
 <br>
 
@@ -77,7 +77,7 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 ---
 
-#### 듄-파트2 / 용산아이파크몰 / IMAX관
+#### 듄-파트2 / 용산아이파크몰 / IMAX 관
 
 ```
 DUNE-PART2-YONGSAN-IMAX
@@ -87,7 +87,7 @@ DUNE-PART2-YONGSAN-IMAX
 
 <br>
 
-#### 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX관
+#### 고질라 X 콩: 뉴 엠파이어 / 용산아이파크몰 / IMAX 관
 
 ```
 GODZILLA-KONG
@@ -138,20 +138,29 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 <br>
 
 > 이전 알림 더보기
->> [CGV 용산아이파크몰 IMAX관 듄 파트2 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-3.png)
+>> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-3.png)
 >>
->> [CGV 용산아이파크몰 IMAX관 듄 파트2 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-4.png)
+>> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-4.png)
 >>
->> [CGV 용산아이파크몰 IMAX관 듄 파트2 (5)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-5.png)
+>> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (5)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-5.png)
 >>
->> [CGV 용산아이파크몰 IMAX관 고질라 X 콩: 뉴 엠파이어 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/godzilla-kong-1.png)
+>> [CGV 용산아이파크몰 IMAX 관 고질라 X 콩: 뉴 엠파이어 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/godzilla-kong-1.png)
 
 <br>
 <br>
 
 ## Description
 
-- 
+
+-  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 5초마다 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 ntfy를 통해 구독자들에게 푸시 알림을 전송합니다.
+
+- 서버의 원활한 작동을 위해 해외 IP 및 과도한 트래픽을 발생시키는 IP의 접속을 임의 차단하고 있습니다.
+
+- 이 소프트웨어는 ntfy를 통해 구독자에게 알림을 전송하기 위한 정보를 제외하고 사용자를 특정할 수 있는 형태의 개인정보를 저장하거나 업로드하지 않습니다.
+
+- 이 소프트웨어는 CGV와 어떠한 협의없이 제작되었으며, 인터넷을 통해 모두가 접근 가능하고 공개된 경로로만 정보를 취득합니다.
+
+- 이 소프트웨어는 [**AGPL-3.0 license**](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/LICENSE)로 배포되었습니다. 따라서 이 소프트웨어를 포함하거나 소스코드의 일부분을 사용, 수정, 2차 가공, 재배포할 때 해당 라이센스의 내용을 지켜주시기 바랍니다.
 
 <br>
 <br>
