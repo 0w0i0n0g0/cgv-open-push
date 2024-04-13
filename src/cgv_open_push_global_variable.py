@@ -1,4 +1,5 @@
-# 개인 ntfy 서버 접근 토큰
+# private ntfy admin 토큰
+# 서버 작동 전 확인 필수
 ntfy_token = ''
 
 url = 'http://ticket.cgv.co.kr/CGV2011/RIA/CJ000.aspx/CJ_TICKET_SCHEDULE_TOTAL_PLAY_YMD'
@@ -48,16 +49,16 @@ json_data = [
     },
     # 고질라 X 콩-뉴 엠파이어 용산아이파크몰 IMAX관
     {
-    'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
-    'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
-    'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
-    'MovieGroupCd': 'rOV6MXDmdX4t5y4MUwm1SQ==',
-    'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
-    'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
-    'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'rOV6MXDmdX4t5y4MUwm1SQ==',
+        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+        'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
 ]
 
