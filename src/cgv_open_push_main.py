@@ -5,6 +5,7 @@ import atexit
 import threading
 from cgv_open_push_function import *
 from cgv_open_push_global_variable import *
+from cgv_open_push_yongsan_imax import yongsan_imax_main
 from logging.handlers import RotatingFileHandler
 from diff_match_patch import diff_match_patch
 
@@ -76,6 +77,10 @@ for data in enumerate(json_data):
     t = threading.Thread(target=main, args=(url, cookies, headers, data[1], target_name[data[0]]))
     t.start()
     time.sleep(1)
+
+# 용아맥 쓰레드 실행
+t = threading.Thread(target=yongsan_imax_main)
+t.start()
 
 # 서버 시작 알림 보내기
 send_push_to_ntfy("raspberrypi\n서버가 시작되었습니다.", "raspberrypi")
