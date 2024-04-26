@@ -73,10 +73,13 @@ app = Flask(__name__)
 def home():
    time_diff = get_time_difference_from_log_file("cgv-open-push.log")
    health_color = ""
-   if time_diff >= 5:
-      health_color = "#e06666"
+   if isinstance(time_diff, float):
+      if time_diff >= 5:
+         health_color = "#e06666"
+      else:
+         health_color ="#1D976C"
    else:
-      health_color ="#1D976C"
+      health_color = "#ff0000"
    log = last_n_lines_from_log_file("cgv-open-push.log", 10)
    user_platform = check_user_platform()
 
