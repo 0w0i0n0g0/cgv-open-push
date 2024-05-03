@@ -16,8 +16,8 @@ def main(url, cookies, headers, json_data, target_name):
         response1 = extract_playdays(get_request_to_cgv_api(url, cookies, headers, json_data, target_name))
         response2 = ""
         while True:
-            # 5초마다 새로고침
-            time.sleep(5)
+            # 5분마다 새로고침
+            time.sleep(300)
             # 2번에 새 응답 저장
             response2 = extract_playdays(get_request_to_cgv_api(url, cookies, headers, json_data, target_name))
             # 새 응답과 저장된 이전 응답이 다르다면
