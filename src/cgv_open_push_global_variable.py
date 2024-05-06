@@ -34,36 +34,64 @@ headers = {
 
 # 변경사항을 확인할 타겟의 json_data
 json_data = [
-    # 듄-파트2 용산아이파크몰 IMAX관
+    # # 듄-파트2 용산아이파크몰 IMAX관
+    # {
+    #     "REQSITE": "x02PG4EcdFrHKluSEQQh4A==",
+    #     "TheaterCd": "LMP+XuzWskJLFG41YQ7HGA==",
+    #     "ISNormal": "3y+GIXzg3xKpOjlKjH8+Fg==",
+    #     "MovieGroupCd": "bNQovwyoamC5EsbGvSDIqw==",
+    #     "ScreenRatingCd": "nG6tVgEQPGU2GvOIdnwTjg==",
+    #     "MovieTypeCd": "/Saxvehmz4RPKZDKNMvSKQ==",
+    #     "Subtitle_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
+    #     "SOUNDX_YN": "nG6tVgEQPGU2GvOIdnwTjg==",
+    #     "Third_Attr_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
+    #     "Language": "zqWM417GS6dxQ7CIf65+iA==",
+    # },
+    # # 고질라 X 콩-뉴 엠파이어 용산아이파크몰 IMAX관
+    # {
+    #     'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    #     'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    #     'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    #     'MovieGroupCd': 'rOV6MXDmdX4t5y4MUwm1SQ==',
+    #     'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    #     'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+    #     'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    # },
+    # 극장판하이큐!!쓰레기장의결전 용산아이파크몰 IMAX관
     {
-        "REQSITE": "x02PG4EcdFrHKluSEQQh4A==",
-        "TheaterCd": "LMP+XuzWskJLFG41YQ7HGA==",
-        "ISNormal": "3y+GIXzg3xKpOjlKjH8+Fg==",
-        "MovieGroupCd": "bNQovwyoamC5EsbGvSDIqw==",
-        "ScreenRatingCd": "nG6tVgEQPGU2GvOIdnwTjg==",
-        "MovieTypeCd": "/Saxvehmz4RPKZDKNMvSKQ==",
-        "Subtitle_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
-        "SOUNDX_YN": "nG6tVgEQPGU2GvOIdnwTjg==",
-        "Third_Attr_CD": "nG6tVgEQPGU2GvOIdnwTjg==",
-        "Language": "zqWM417GS6dxQ7CIf65+iA==",
+    'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    'MovieGroupCd': 'rScFvvwEyPojN0wB3iaAJg==',
+    'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
-    # 고질라 X 콩-뉴 엠파이어 용산아이파크몰 IMAX관
+    # 혹성탈출-새로운시대 용산아이파크몰 IMAX관
     {
-        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
-        'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
-        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
-        'MovieGroupCd': 'rOV6MXDmdX4t5y4MUwm1SQ==',
-        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
-        'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
-        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    'MovieGroupCd': 'kWm88LTxi790bmsk4bHiOg==',
+    'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+    'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
 ]
 
 # 변경사항을 확인할 타겟 이름 (json_data 순서대로)
 target_name = [
-    "DUNE-PART2-YONGSAN-IMAX",
-    "GODZILLA-KONG",
+    # "DUNE-PART2-YONGSAN-IMAX",
+    # "GODZILLA-KONG",
+    "HAIKU-YONGSAN-IMAX",
+    "APES-YONGSAN-IMAX",
 ]
