@@ -74,7 +74,7 @@ def home():
    time_diff = get_time_difference_from_log_file("cgv-open-push.log")
    health_color = ""
    if isinstance(time_diff, float):
-      if time_diff >= 5:
+      if time_diff >= 300:
          health_color = "#e06666"
       else:
          health_color ="#1D976C"
@@ -207,7 +207,7 @@ def home():
       </div>
       <h2>Server Health Check</h2>
       <div id="health-check">
-         <progress value='3' max='{time_diff}'></progress>
+         <progress value='200' max='{time_diff}'></progress>
       </div>
       <h2>Server Log</h2>
       <div id="log">
