@@ -49,8 +49,8 @@ def send_open_push(result :str, target_name :str):
     }
     data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} 서버의 send_ntfy_push : {response}')
-    return response
+    logging.info(f'{target_name} 서버의 send_ntfy_push : {response.status_code}')
+    return response.status_code
 
 # target_name에 공지사항 보내기
 def send_open_push_announcement(result :str, target_name :str):
@@ -61,8 +61,8 @@ def send_open_push_announcement(result :str, target_name :str):
     }
     data = f'공지사항!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} 서버의 send_open_push_announcement : {response}')
-    return response
+    logging.info(f'{target_name} 서버의 send_open_push_announcement : {response.status_code}')
+    return response.status_code
 
 # 개인 ntfy에 푸시 알림 보내기
 def send_push_to_private_ntfy(text :str, target_name :str):
@@ -73,8 +73,8 @@ def send_push_to_private_ntfy(text :str, target_name :str):
     }
     data = text.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/SERVER', headers=headers, data=data)
-    logging.info(f'{target_name} send_push_to_private_ntfy : {text.strip()} : {response}')
-    return response
+    logging.info(f'{target_name} send_push_to_private_ntfy : {response.status_code}')
+    return response.status_code
 
 # ntfy에 푸시 알림 보내기
 def send_push_to_ntfy(text :str, target_name :str):
@@ -83,8 +83,8 @@ def send_push_to_ntfy(text :str, target_name :str):
     }
     data = text.encode()
     response = requests.post('http://ntfy.sh/CGVOPENPUSHSERVER', headers=headers, data=data)
-    logging.info(f'{target_name} send_push_to_ntfy : {text.strip()} : {response}')
-    return response
+    logging.info(f'{target_name} send_push_to_ntfy : {response.status_code}')
+    return response.status_code
 
 # XML 문자열을 받아서 PlayDays 태그를 XML 문자열로 반환
 def extract_playdays(xml_string):
@@ -111,7 +111,7 @@ def extract_xml_object_by_tag(xml_string, tag):
 # 문자열과 태그를 받아서 해당 태그 사이의 문자열을 모두 반환
 def extract_text_between_tag(xml_string, tag):
     # 동적으로 정규 표현식 패턴 생성
-    pattern = re.compile(r'<{}>(.*?)</{}>'.format(tag, tag))
+    pattern = re.compile(r'<{}>(.*?)</{}>'.format(re.escape(tag), re.escape(tag)))
     # 찾은 문자열을 ', '로 구분하여 하나의 문자열로 연결하여 반환
     return ', '.join(pattern.findall(xml_string))
 
@@ -125,15 +125,13 @@ def extract_all_text_from_xml(xml_string):
 # 문자열과 태그를 받아서 해당 태그와 내용을 모두 삭제된 문자열을 반환
 def remove_text_between_tag(xml_string, tag):
     # 동적으로 정규 표현식 패턴 생성
-    pattern = re.compile(r'<{}>(.*?)</{}>'.format(tag, tag))
+    pattern = re.compile(r'<{}>(.*?)</{}>'.format(re.escape(tag), re.escape(tag)))
     # 모든 태그와 내용을 찾아 제거
     return pattern.sub('', xml_string)
 
 # yongsan_imax에 필요 없는 태그 제거하기
 def yongsan_imax_remove_useless_tags(xml_string):
-
     useless_tags = {"PLAY_YMD", "GROUP_CD", "MOVIE_CD", "RATING_CD", "PLATFORM_CD", "TRANS_CD", "PLATFORM_ATTR_CD", "MOVIE_COLLAGE_YN", "TICKET_RATE", "STAR_POINT", "SOUNDX_YN", "THIRD_ATTR_CD", "MOVIE_ATTR_CD", "MOVIE_PKG_YN", "MOVIE_NOSHOW_YN", "POSTER", "MOVIE_IDX", }
-
-    for useless_tag in enumerate(useless_tags):
-        xml_string = remove_text_between_tag(xml_string, useless_tag)
+    for tag in useless_tags:
+        xml_string = remove_text_between_tag(xml_string, tag)
     return xml_string
