@@ -50,7 +50,7 @@ def check_user_platform():
 import requests
 
 def get_subscribers_total():
-  response = requests.get("http://192.168.0.17:9090")
+  response = requests.get("http://192.168.0.101:9090")
   if response.status_code == 200:
     match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
     if match:
@@ -59,7 +59,7 @@ def get_subscribers_total():
     raise RuntimeError(f"RuntimeError : {response.status_code}")
   
 def get_visitors_total():
-  response = requests.get("http://192.168.0.17:9090")
+  response = requests.get("http://192.168.0.101:9090")
   if response.status_code == 200:
     match = re.search(r"ntfy_visitors_total\s+(\d+)", response.text)
     if match:
