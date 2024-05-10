@@ -86,6 +86,19 @@ json_data = [
     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
+    #퓨리오사-매드맥스사가 용산아이파크몰 IMAX관
+    {
+    'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    'MovieGroupCd': 'Eclx6HdxURDc7ZSCEC1oVg==',
+    'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+    'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
 ]
 
 # 변경사항을 확인할 타겟 이름 (json_data 순서대로)
@@ -94,4 +107,5 @@ target_name = [
     # "GODZILLA-KONG",
     "HAIKU-YONGSAN-IMAX",
     "APES-YONGSAN-IMAX",
+    "FURIOSA-YONGSAN-IMAX",
 ]
