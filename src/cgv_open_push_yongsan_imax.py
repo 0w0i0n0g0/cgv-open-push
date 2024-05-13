@@ -56,15 +56,18 @@ def yongsan_imax_main():
         response1 = get_request_to_cgv_api(url, cookies, headers, json_data, target_name)
         response2 = ""
         while True:
-            # 5초마다 새로고침
-            time.sleep(5)
+            # 5분마다 새로고침
+            time.sleep(300)
             # 2번에 새 응답 저장
             response2 = get_request_to_cgv_api(url, cookies, headers, json_data, target_name)
             print(response2)
             # 새 응답과 저장된 이전 응답이 다르다면
             if response1 != response2:
-                dmp = diff_match_patch()
+                # 불필요한 부분 삭제
+                response1 = yongsan_imax_remove_useless_tags(response1)
+                response2 = yongsan_imax_remove_useless_tags(response2)
                 # diff에 응답끼리 다른 부분을 추출 {(-1, "삭제된 부분"), (1, "추가된 부분")}
+                dmp = diff_match_patch()
                 diff = dmp.diff_main(response1, response2)
                 dmp.diff_cleanupSemantic(diff)
                 added_result = ""
