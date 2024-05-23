@@ -1,9 +1,9 @@
-from datetime import datetime, timezone
 import json
 import re
 import requests
-import xml.etree.ElementTree as ET
 import logging
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 from cgv_open_push_global_variable import ntfy_token
 
 # request의 응답 객체를 받아 현재시간의 차이를 계산
@@ -49,7 +49,7 @@ def send_open_push(result :str, target_name :str):
     }
     data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} 서버의 send_ntfy_push : {response.status_code}')
+    logging.info(f'{target_name} send_ntfy_push : {response.status_code}')
     return response.status_code
 
 # target_name에 공지사항 보내기
@@ -61,7 +61,7 @@ def send_open_push_announcement(result :str, target_name :str):
     }
     data = f'공지사항!\n{result}\n{target_name}'.encode()
     response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} 서버의 send_open_push_announcement : {response.status_code}')
+    logging.info(f'{target_name} send_open_push_announcement : {response.status_code}')
     return response.status_code
 
 # 개인 ntfy에 푸시 알림 보내기
@@ -129,8 +129,8 @@ def remove_text_between_tag(xml_string, tag):
     # 모든 태그와 내용을 찾아 제거
     return pattern.sub('', xml_string)
 
-# yongsan_imax에 필요 없는 태그 제거하기
-def yongsan_imax_remove_useless_tags(xml_string):
+# 특별관 예매 오픈 알림에 필요 없는 태그 제거하기
+def screen_remove_useless_tags(xml_string):
     useless_tags = {"PLAY_YMD", "GROUP_CD", "MOVIE_CD", "RATING_CD", "PLATFORM_CD", "TRANS_CD", "PLATFORM_ATTR_CD", "MOVIE_COLLAGE_YN", "TICKET_RATE", "STAR_POINT", "SOUNDX_YN", "THIRD_ATTR_CD", "MOVIE_ATTR_CD", "MOVIE_PKG_YN", "MOVIE_NOSHOW_YN", "POSTER", "MOVIE_IDX", "THIRD_ATTR_NM", }
     for tag in useless_tags:
         xml_string = remove_text_between_tag(xml_string, tag)
