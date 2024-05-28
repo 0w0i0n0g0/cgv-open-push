@@ -1,6 +1,7 @@
 import re
 from flask import Flask, request
 from datetime import datetime
+from cgv_open_push_global_variable import private_ntfy_prometheus_address
 
 def get_time_difference_from_log_file(log_file):
    try:
@@ -50,7 +51,7 @@ def check_user_platform():
 import requests
 
 def get_subscribers_total():
-  response = requests.get("http://192.168.0.101:9090")
+  response = requests.get(private_ntfy_prometheus_address)
   if response.status_code == 200:
     match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
     if match:
@@ -59,7 +60,7 @@ def get_subscribers_total():
     raise RuntimeError(f"RuntimeError : {response.status_code}")
   
 def get_visitors_total():
-  response = requests.get("http://192.168.0.101:9090")
+  response = requests.get(private_ntfy_prometheus_address)
   if response.status_code == 200:
     match = re.search(r"ntfy_visitors_total\s+(\d+)", response.text)
     if match:
