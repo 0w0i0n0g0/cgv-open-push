@@ -4,7 +4,7 @@ import requests
 import logging
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-from cgv_open_push_global_variable import ntfy_token
+from cgv_open_push_global_variable import ntfy_token, private_ntfy_server_address
 
 # request의 응답 객체를 받아 현재시간의 차이를 계산
 def calculate_response_delay(response):
@@ -48,7 +48,7 @@ def send_open_push(result :str, target_name :str):
         'Authorization': ntfy_token,
     }
     data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
-    response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
+    response = requests.post(f'{private_ntfy_server_address}/{target_name}', headers=headers, data=data)
     logging.info(f'{target_name} send_ntfy_push : {response.status_code}')
     return response.status_code
 
@@ -60,7 +60,7 @@ def send_open_push_announcement(result :str, target_name :str):
         'Authorization': ntfy_token,
     }
     data = f'공지사항!\n{result}\n{target_name}'.encode()
-    response = requests.post(f'http://serverkorea.duckdns.org/{target_name}', headers=headers, data=data)
+    response = requests.post(f'{private_ntfy_server_address}/{target_name}', headers=headers, data=data)
     logging.info(f'{target_name} send_open_push_announcement : {response.status_code}')
     return response.status_code
 
@@ -72,7 +72,7 @@ def send_push_to_private_ntfy(text :str, target_name :str):
         'Authorization': ntfy_token,
     }
     data = text.encode()
-    response = requests.post(f'http://serverkorea.duckdns.org/SERVER', headers=headers, data=data)
+    response = requests.post(f'{private_ntfy_server_address}/SERVER', headers=headers, data=data)
     logging.info(f'{target_name} send_push_to_private_ntfy : {response.status_code}')
     return response.status_code
 
