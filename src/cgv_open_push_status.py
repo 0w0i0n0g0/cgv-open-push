@@ -1,4 +1,5 @@
 import re
+import requests
 from flask import Flask, request
 from datetime import datetime
 from cgv_open_push_global_variable import private_ntfy_prometheus_address
@@ -17,7 +18,7 @@ def get_time_difference_from_log_file(log_file):
       return e
    return time_diff
 
-def last_n_lines_from_log_file(log_file, n=5):
+def last_n_lines_from_log_file(log_file, n=50):
     log = ''
     try:
         with open(log_file, 'r', encoding='utf-8') as f:
@@ -33,22 +34,12 @@ def last_n_lines_from_log_file(log_file, n=5):
     finally:
         return log
 
-def extract_platform(user_agent_string):
-   # 첫 번째 괄호 안의 내용을 추출하는 정규 표현식
-   pattern = r"\((.*?)\;"
-   # 정규 표현식을 사용하여 문자열 일치 부분을 추출합니다.
-   match = re.search(pattern, user_agent_string)
-   # 일치하는 부분이 없으면 빈 문자열을 반환합니다.
-   if match is None:
-      return ""
-   # 추출된 문자열을 반환합니다.
-   return match.group(1)
-
-def check_user_platform():
-   platform = extract_platform(request.user_agent.string)
-   return platform
-
-import requests
+def check_user_is_mobile_or_not():
+   user_agent = request.headers.get('User-Agent')
+   if 'Android' in user_agent or 'iPhone' in user_agent or 'iPad' in user_agent:
+      return True # 모바일
+   else:
+      return False # 컴퓨터
 
 def get_subscribers_total():
   response = requests.get(private_ntfy_prometheus_address)
@@ -58,7 +49,7 @@ def get_subscribers_total():
       return int(match.group(1))
   else:
     raise RuntimeError(f"RuntimeError : {response.status_code}")
-  
+
 def get_visitors_total():
   response = requests.get(private_ntfy_prometheus_address)
   if response.status_code == 200:
@@ -81,20 +72,22 @@ def home():
          health_color ="#1D976C"
    else:
       health_color = "#ff0000"
-   log = last_n_lines_from_log_file("cgv-open-push.log", 10)
-   user_platform = check_user_platform()
 
-   subscribers_total = get_subscribers_total()
-   visitors_total = get_visitors_total()
+   subscribers_total, visitors_total = get_subscribers_total(), get_visitors_total()
 
-   font_size = ""
+   log = last_n_lines_from_log_file("cgv-open-push.log", 50)
+
+   pre_tag_font_size = ""
    padding_and_margin = ""
-   if "Windows" in user_platform:
-      font_size = "font-size: 1.5em;"
-      padding_and_margin = 1
+   num_item_font_size = ""
+   if check_user_is_mobile_or_not():
+      num_item_font_size = "4"
+      pre_tag_font_size = "1"
+      padding_and_margin = "2"
    else:
-      font_size = "font-size: 1em;"
-      padding_and_margin = 2
+      num_item_font_size = "5"
+      pre_tag_font_size = "1.5"
+      padding_and_margin = "1"
 
    css = f"""
    html, body {{ 
@@ -131,11 +124,11 @@ def home():
       font-family: arial;
    }}
    pre {{
-      {font_size} 
+      font-size: {pre_tag_font_size}em;
       white-space: pre-wrap; 
       background-color: #f5f5f5; 
       color: #444444;
-      margin: {padding_and_margin}vw; 
+      margin: 0 {padding_and_margin}vw; 
       padding: {padding_and_margin}vw; 
       font-family: "Nanum Gothic Coding", monospace;
    }}
@@ -153,14 +146,14 @@ def home():
       padding-bottom: 10px;
    }}
    .in-title {{
-      font: 30px/1 'arial';
+      font: 1.7em/1 'arial';
       color: gray;
       font-weight: 600;
       margin-top: 10px;
       margin-bottom: 0;
    }}
    .nums {{
-      font: bold 80px/1 'arial';
+      font: bold {num_item_font_size}em/1 'arial';
       color: #444444;
    }}
       #health-check {{
@@ -171,6 +164,8 @@ def home():
    }}
    #log {{
       margin:0 auto; 
+      max-height: 100vh;
+      overflow-y: auto;
    }}
    #metrics {{
       background-color: #f5f5f5; 
@@ -181,6 +176,8 @@ def home():
    """
 
    return f"""
+   <!DOCTYPE html>
+   <html lang="ko">
    <head>
       <title>CGV 예매 오픈 알리미</title>
       <link rel="shortcut icon" href="https://raw.githubusercontent.com/0w0i0n0g0/cgv-open-push/main/img/logo.png">
@@ -238,6 +235,7 @@ def home():
          }});
       </script>
    </body>
+   </html>
    """
 
 if __name__ == '__main__':  
