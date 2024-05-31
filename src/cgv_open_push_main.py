@@ -1,6 +1,7 @@
 import time
 import atexit
 import threading
+import subprocess
 from cgv_open_push_function import *
 from cgv_open_push_global_variable import *
 from cgv_open_push_movie import movie_main
@@ -10,6 +11,9 @@ from logging.handlers import RotatingFileHandler
 # 로그 저장 (최대 5MB씩 3개 백업본 저장)
 handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=5*1024*1024, backupCount=3, encoding='utf-8')]
 logging.basicConfig(handlers=handlers, level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
+
+# cgv_open_push_status.py 실행
+subprocess.Popen(['python', 'cgv_open_push_status.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # 영화 Thread 실행
 for data in enumerate(movie_json_data):
