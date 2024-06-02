@@ -10,7 +10,6 @@ def get_time_difference_from_log_file(log_file):
          lines = f.readlines()
          last_line = lines[-1]
       last_time_str = last_line.split(",")[0]
-      print(last_time_str)
       last_time = datetime.strptime(last_time_str, "%Y-%m-%d %H:%M:%S")
       current_time = datetime.now()
       time_diff = (current_time - last_time).total_seconds()
@@ -41,23 +40,19 @@ def check_user_is_mobile_or_not():
    else:
       return False # 컴퓨터
 
-def get_subscribers_total():
-  response = requests.get(private_ntfy_prometheus_address)
-  if response.status_code == 200:
-    match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
-    if match:
-      return int(match.group(1))
-  else:
-    raise RuntimeError(f"RuntimeError : {response.status_code}")
-
-def get_visitors_total():
-  response = requests.get(private_ntfy_prometheus_address)
-  if response.status_code == 200:
-    match = re.search(r"ntfy_visitors_total\s+(\d+)", response.text)
-    if match:
-      return int(match.group(1))
-  else:
-    raise RuntimeError(f"RuntimeError : {response.status_code}")
+def get_metrics():
+   result = []
+   response = requests.get(private_ntfy_prometheus_address)
+   if response.status_code == 200:
+      match = re.search(r"ntfy_visitors_total\s+(\d+)", response.text)
+      if match:
+         result.append(int(match.group(1)))
+      match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
+      if match:
+         result.append(int(match.group(1)))
+   else:
+      raise RuntimeError(f"RuntimeError : {response.status_code}")
+   return result
 
 app = Flask(__name__)
 
@@ -73,9 +68,10 @@ def home():
    else:
       health_color = "#ff0000"
 
-   subscribers_total, visitors_total = get_subscribers_total(), get_visitors_total()
-
    log = last_n_lines_from_log_file("cgv-open-push.log", 50)
+   metrics = get_metrics()
+   visitors_total = metrics[0]
+   subscribers_total = metrics[1]
 
    pre_tag_font_size = ""
    padding_and_margin = ""
@@ -211,7 +207,7 @@ def home():
       <div id="log">
          <pre>{log}</pre>
       </div>
-         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
       <script>
          //숫자 카운트 애니메이션
          $('.nums').each(function () {{
