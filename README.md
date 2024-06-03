@@ -15,7 +15,7 @@ By_0w0i0n0g0
 
 ### [작동 여부 확인 페이지](https://stats.uptimerobot.com/dr29M3hiXt)
 
-###  [서버 로그 및 통계 페이지](http://serverkorea.duckdns.org:5000)
+###  [서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
 
 </div>
 
@@ -24,23 +24,37 @@ By_0w0i0n0g0
 
 ### 📢 알림
 
-CGV의 서버 쪽 제한으로 인해 최대 __5분__ 간의 알림 지연이 생길 수 있습니다. 양해 부탁드립니다.
+__꼭 읽어주세요!__
+
+2024/06/03부로 __서버 이전__ 되었습니다.
+
+이에 따라 ntfy 도메인이 __https://ntfy.wzero.dev__ 로 변경되었습니다.
+
+이전 구독들은 모두 삭제하고, 아래 [ 🔔 알림 받는 방법! ] 에 따라서 다시 구독해주세요!
+
+이전 도메인 http://serverkorea.duckdns.org 는 유예기간 후 2024/06/05 중에 서비스가 종료됩니다.
 
 <br>
 
-### 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/05/18 기준)
+### 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/06/03 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
 - 극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관
-- 혹성탈출-새로운시대 / 용산아이파크몰 / IMAX 관
 - 퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관
+- 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관
 
 <br>
 
-### 최근 업데이트 내역
+### 📄 최근 업데이트 내역
 
-용산아이파크몰 4DX관(용포디) 예매 오픈 알리미가 추가되었습니다.
+[2024/06/03] 서버 이전 및 도메인 변경되었습니다.
+
+[2024/06/03] 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관 예매 오픈 알리미가 추가되었습니다.
+
+[2024/06/03] 혹성탈출-새로운시대 / 용산아이파크몰 / IMAX 관 예매 오픈 알리미가 삭제되었습니다.
+
+[2024/05/18] 용산아이파크몰 4DX관(용포디) 예매 오픈 알리미가 추가되었습니다.
 
 <br>
 
@@ -53,7 +67,7 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 ## 🔔 알림 받는 방법!
 
-### 먼저 ntfy 앱을 다운받으세요.
+### ntfy 앱을 다운받으세요.
 
 - [구글 플레이스토어](https://play.google.com/store/apps/details?id=io.heckel.ntfy)
 
@@ -65,9 +79,9 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 ### 구독을 추가하세요.
 
-알림을 받기 위해 ```Add subscription```을 눌러 구독을 추가해야 해요.
+알림을 받기 위해 ```Add subscription``` 을 눌러 구독을 추가해야 해요.
 
-먼저 밑의 예시와 같이 ```Topic name```에 밑의 **구독 리스트** 중에서 알림받고 싶은 것을 골라 입력해주세요. 
+먼저 밑의 예시와 같이 ```Topic name``` 에 아래의 **구독 리스트** 중에서 알림받고 싶은 것을 골라 입력해주세요. 
 
 > 정확히 입력해야 합니다.
 
@@ -83,7 +97,7 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 ---
 
-1. #### 용아맥 예매 오픈 알리미
+- **용아맥 예매 오픈 알리미**
 
 이 구독은 용아맥에 새로운 영화가 등록되거나, 새 날짜의 예매가 오픈되었을 때 알려줍니다!
 
@@ -97,7 +111,7 @@ YONGSAN-IMAX
 
 <br>
 
-2. #### 용포디 예매 오픈 알리미
+- **용포디 예매 오픈 알리미**
 
 이 구독은 용포디에 새로운 영화가 등록되거나, 새 날짜의 예매가 오픈되었을 때 알려줍니다!
 
@@ -111,7 +125,7 @@ YONGSAN-4DX
 
 <br>
 
-3. #### 극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관
+- **극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관**
 
 ```
 HAIKU-YONGSAN-IMAX
@@ -121,20 +135,20 @@ HAIKU-YONGSAN-IMAX
 
 <br>
 
-4. #### 혹성탈출-새로운시대 / 용산아이파크몰 / IMAX 관
+- **퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관**
 
 ```
-APES-YONGSAN-IMAX
+FURIOSA-YONGSAN-IMAX
 ```
 
 > 복사 붙여넣기 해주세요.
 
 <br>
 
-5. #### 퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관
+- **나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관**
 
 ```
-FURIOSA-YONGSAN-IMAX
+BADBOYS-YONGSAN-IMAX
 ```
 
 > 복사 붙여넣기 해주세요.
@@ -143,22 +157,23 @@ FURIOSA-YONGSAN-IMAX
 
 <br>
 
+### 서버를 설정하세요.
 
-그리고 다음과 같이 ```Use another server```를 활성화 후, ```Service URL```에
+```Topic name```을 입력했다면, 아래에 토글 버튼을 눌러서 다음과 같이 ```Use another server``` 를 활성화 후, ```Service URL``` 에
 
 ```
-http://serverkorea.duckdns.org
+https://ntfy.wzero.dev
 ```
 
 > 복사 붙여넣기 해주세요.
 
-를 입력해주세요.
+를 입력하고, ```Subscribe``` 버튼을 눌러주세요.
 
 <p align="center">
   <img src="./img/use-another-server.png" width="300"/>
 </p>
 
-> 만약 오류메세지가 뜨면서 실패하게 된다면 조금 기다린 후 다시 시도해주세요. 개인 서버로 운영 중이여서 24시간 정상작동을 보장할 수 없습니다.
+> 만약 오류메세지가 뜨면서 실패하게 된다면 조금 기다린 후 다시 시도해주세요. 해당 서비스는 개인 서버로 운영 중으로, 24시간 정상작동을 보장할 수 없습니다.
 
 <br>
 <br>
@@ -169,7 +184,7 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 
 <br>
 
-### 알람은 이렇게 와요.
+### 알림은 이렇게 와요.
 
 
 <p align="center">
@@ -195,13 +210,13 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 
 ## 사용 전 반드시 읽어주세요.
 
--  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 ~~5초~~5분마다 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 ntfy를 통해 구독자들에게 푸시 알림을 전송합니다.
+-  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 5분마다 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 ntfy를 통해 구독자들에게 푸시 알림을 전송합니다.
 
 - 서버의 원활한 작동을 위해 해외 IP 및 과도한 트래픽을 발생시키는 IP의 접속을 임의 차단하고 있습니다.
 
-- 이 소프트웨어는 ntfy를 통해 구독자에게 알림을 전송하기 위한 정보를 제외하고 사용자를 특정할 수 있는 형태의 개인정보를 저장하거나 업로드하지 않습니다.
+- 이 서비스는 ntfy를 통해 구독자에게 알림을 전송하기 위한 정보를 제외하고 사용자를 특정할 수 있는 형태의 개인정보를 저장하거나 업로드하지 않습니다.
 
-- 이 소프트웨어는 CGV와 어떠한 협의없이 제작되었으며, 인터넷을 통해 모두가 접근 가능하고 공개된 경로로만 정보를 취득합니다.
+- 이 서비스는 CGV와 어떠한 협의없이 제작되었으며, 인터넷을 통해 모두가 접근 가능하고 공개된 경로로만 정보를 취득합니다.
 
 - 이 소프트웨어는 [**AGPL-3.0 license**](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/LICENSE)로 배포되었습니다. 따라서 이 소프트웨어를 포함하거나 소스코드의 일부분을 사용, 수정, 2차 가공, 재배포할 때 해당 라이센스의 내용을 지켜주시기 바랍니다.
 
@@ -211,50 +226,32 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 ## Features
 
 - Send Push Notification
-  - http://serverkorea.duckdns.org/{target_name}
+  - https://ntfy.wingzero.dev/{target_name}
     - Push notification when new date detected from *target_name*.
 
 - Health Check
-  - http://serverkorea.duckdns.org:5000
+  - https://cgv-open-push.wingzero.dev
     - Server status
-  - http://ntfy.sh/CGVOPENPUSHSERVER
-  - http://serverkorea.duckdns.org/SERVER
+  - https://ntfy.sh/CGVOPENPUSHSERVER
+  - https://ntfy.wingzero.dev/SERVER
     - Push notification when server start, end and error.
 
-- Server Port
-  - Internal
-    - http://192.168.0.17 : nginx
-    - http://192.168.0.17/monitoring : eZ Server monitor
-    - http://192.168.0.17:9999 : private ntfy server
-    - http://192.168.0.17:9090 : metrics
-    - http://192.168.0.17:3000 : Grafana
-    - http://192.168.0.17:9010 : Prometheus
-    - http://192.168.0.17:5000 : Server status
-  - External
-    - http://serverkorea.duckdns.org : private ntfy server
-    - http://serverkorea.duckdns.org:5000 : Server status
+- Docker Compose
+```yaml
+version: "3"
 
-- Logging
-  - cgv-open-push.log
-    - maxBytes=5\*1024\*1024, backupCount=3, encoding='utf-8'
-
-- Testing
-  - cgv_open_push_test.py
-    - test_send_curl_to_cgv_multiple
-    - test_send_ntfy_push_health_check
-
-- Autostart after Boot
-  - sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-    - @bash /home/pi/afterstart.sh
-  - afterstart.sh
-
-```bash
-#!/bin/bash
-python cgv_open_push_main.py &
-python cgv_open_push_status.py &
-echo 'raspberry' | sudo -S ntfy serve
-cd prometheus
-./prometheus --web.listen-address=:9010
+services:
+  cgv-open-push:
+    image: 0w0i0n0g0/cgv-open-push:latest
+    container_name: cgv-open-push
+    environment:
+      TZ: "Asia/Seoul"
+      NTFY_TOKEN: "Bearer tk_abcdefghijklmnopqrstuvwxyz"
+      PRIVATE_NTFY_SERVER_ADDRESS: "https://ntfy.wzero.dev"
+      PRIVATE_NTFY_PROMETHEUS_ADDRESS: "https://ntfy.wzero.dev/metrics"
+    ports:
+      - "10004:5000"
+    restart: unless-stopped
 ```
 
 <br>
