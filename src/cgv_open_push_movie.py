@@ -11,10 +11,13 @@ def movie_main(url, cookies, headers, json_data, target_name):
         response1 = extract_playdays(get_request_to_cgv_api(url, cookies, headers, json_data, target_name))
         response2 = ""
         while True:
-            # 5분마다 새로고침
-            time.sleep(300)
             # 2번에 새 응답 저장
-            response2 = extract_playdays(get_request_to_cgv_api(url, cookies, headers, json_data, target_name))
+            response = get_request_to_cgv_api(url, cookies, headers, json_data, target_name)
+            위치 = extract_text_between_tag(response, "THEATER_NM")
+            유형 = extract_text_between_tag(response, "RATING_NM")
+            영화 = extract_text_between_tag(response, "MOVIE_GROUP_NM")
+            save_log_info(f"{target_name} response : 위치 : {위치}, 유형 : {유형}, 영화 : {영화}")
+            response2 = extract_playdays(response)
             # 새 응답과 저장된 이전 응답이 다르다면
             if response1 != response2:
                 dmp = diff_match_patch()
@@ -29,36 +32,38 @@ def movie_main(url, cookies, headers, json_data, target_name):
                         try:
                             added_result += extract_text_between_tag(d[1], "FORMAT_DATE")
                         except:
-                            added_result += d[1] + "\n"
+                            added_result += d[1] + ", "
                     ## d[0]가 -1이면 삭제된 요소
                     elif d[0] == -1:
                         try:
                             deleted_result += extract_text_between_tag(d[1], "FORMAT_DATE")
                         except:
-                            deleted_result += d[1] + "\n"
+                            deleted_result += d[1] + ", "
                 #추가된 요소가 있으면
                 if added_result != "":
-                    logging.info(f'{target_name} added item : {added_result}')
+                    save_log_info(f'{target_name} added item : {added_result}')
                     # 추가된 변경사항 푸시알림 보내기
                     try:
                         send_open_push(str(added_result), target_name)
                     except Exception as e:
                         send_push_to_ntfy(f"{target_name}\n서버에서 푸시 알림 전송 중 오류 발생🚨\n{e}", target_name)
                         send_push_to_private_ntfy(f"{target_name}\n서버에서 푸시 알림 전송 중 오류 발생🚨\n{e}", target_name)
-                        logging.error(f'{target_name} error when sending open push : {e}')
+                        save_log_error(f'{target_name} error when sending open push : {e}')
                         # 5초 대기 후 다시 알림 보내기 시도
                         time.sleep(5)
                         send_open_push(str(added_result), target_name)
                 #삭제된 요소가 있으면
                 if deleted_result != "":
                     #로그만 남기기
-                    logging.info(f'{target_name} deleted item : {deleted_result}')
+                    save_log_info(f'{target_name} deleted item : {deleted_result}')
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
+            # 5분마다 새로고침
+            time.sleep(300)
     # 오류 발생 시
     except Exception as e:
         send_push_to_ntfy(f"{target_name}\n서버에서 오류 발생🚨\n{e}", target_name)
         send_push_to_private_ntfy(f"{target_name}\n서버에서 오류 발생🚨\n{e}", target_name)
-        logging.error(f'{target_name} error : {e}')
+        save_log_error(f'{target_name} error : {e}')
         # 다시 실행
         os.execl(sys.executable, sys.executable, *sys.argv)
