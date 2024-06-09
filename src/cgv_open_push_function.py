@@ -1,10 +1,31 @@
 import json
 import re
+import subprocess
+import time
 import requests
 import logging
+import datetime
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from cgv_open_push_global_variable import ntfy_token, private_ntfy_server_address
+
+def run_cgv_open_push_status():
+    while True:
+        save_log_info("cgv_open_push_status.py restarted.")
+        process = subprocess.Popen(['python', 'cgv_open_push_status.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        time.sleep(3600)
+        process.kill()
+
+# 로그 저장
+def save_log_info(log, is_log_file=False):
+    if is_log_file:
+        logging.info(log)
+    print(f"[{datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')}] {log}", flush=True)
+
+def save_log_error(log, is_log_file=True):
+    if is_log_file:
+        logging.error(log)
+    print(f"[{datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')}] {log}", flush=True)
 
 # request의 응답 객체를 받아 현재시간의 차이를 계산
 def calculate_response_delay(response):
@@ -30,7 +51,7 @@ def get_request_to_cgv_api(url, cookies, headers, json_data, target_name):
     )
     # 응답 본문 추출
     response_body = response.content
-    logging.info(f'{target_name} response delay : {calculate_response_delay(response)}')
+    save_log_info(f'{target_name} response delay : {calculate_response_delay(response)}', True)
     # UTF-8 디코딩
     response_text = response_body.decode('utf-8-sig')
     # JSON 데이터 파싱
@@ -43,25 +64,13 @@ def get_request_to_cgv_api(url, cookies, headers, json_data, target_name):
 # 예매 오픈 푸시 알림 보내기
 def send_open_push(result :str, target_name :str):
     headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
         # ntfy 서버 토큰
         'Authorization': ntfy_token,
+        "Title": "예매 오픈 알림".encode(),
     }
-    data = f'예매 오픈 알림!\n{result}\n{target_name}'.encode()
+    data = f'{result}\n{target_name}'.encode()
     response = requests.post(f'{private_ntfy_server_address}/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} send_ntfy_push : {response.status_code}')
-    return response.status_code
-
-# target_name에 공지사항 보내기
-def send_open_push_announcement(result :str, target_name :str):
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        # ntfy 서버 토큰
-        'Authorization': ntfy_token,
-    }
-    data = f'공지사항!\n{result}\n{target_name}'.encode()
-    response = requests.post(f'{private_ntfy_server_address}/{target_name}', headers=headers, data=data)
-    logging.info(f'{target_name} send_open_push_announcement : {response.status_code}')
+    save_log_info(f'{target_name} send_ntfy_push : {response.status_code}')
     return response.status_code
 
 # 개인 ntfy에 푸시 알림 보내기
@@ -73,7 +82,7 @@ def send_push_to_private_ntfy(text :str, target_name :str):
     }
     data = text.encode()
     response = requests.post(f'{private_ntfy_server_address}/SERVER', headers=headers, data=data)
-    logging.info(f'{target_name} send_push_to_private_ntfy : {response.status_code}')
+    save_log_info(f'{target_name} send_push_to_private_ntfy : {response.status_code}')
     return response.status_code
 
 # ntfy에 푸시 알림 보내기
@@ -83,7 +92,7 @@ def send_push_to_ntfy(text :str, target_name :str):
     }
     data = text.encode()
     response = requests.post('http://ntfy.sh/CGVOPENPUSHSERVER', headers=headers, data=data)
-    logging.info(f'{target_name} send_push_to_ntfy : {response.status_code}')
+    save_log_info(f'{target_name} send_push_to_ntfy : {response.status_code}')
     return response.status_code
 
 # XML 문자열을 받아서 PlayDays 태그를 XML 문자열로 반환
