@@ -3,6 +3,7 @@ import requests
 from flask import Flask, request
 from datetime import datetime
 from cgv_open_push_global_variable import private_ntfy_prometheus_address
+from cgv_open_push_function import save_log_error
 
 def get_time_difference_from_log_file(log_file):
    try:
@@ -42,16 +43,15 @@ def check_user_is_mobile_or_not():
 
 def get_metrics():
    result = []
-   response = requests.get(private_ntfy_prometheus_address)
-   if response.status_code == 200:
-      match = re.search(r"ntfy_visitors_total\s+(\d+)", response.text)
-      if match:
-         result.append(int(match.group(1)))
+   try:
+    with requests.get(private_ntfy_prometheus_address, timeout=3) as response:
+      response.raise_for_status()
       match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
       if match:
          result.append(int(match.group(1)))
-   else:
-      raise RuntimeError(f"RuntimeError : {response.status_code}")
+   except Exception as e:
+      save_log_error(f"ERROR (Exception) at def get_metrics(): at cgv_open_push_status: {e}")
+      result = [-1]
    return result
 
 app = Flask(__name__)
@@ -70,8 +70,7 @@ def home():
 
    log = last_n_lines_from_log_file("cgv-open-push.log", 50)
    metrics = get_metrics()
-   visitors_total = metrics[0]
-   subscribers_total = metrics[1]
+   subscribers_total = metrics[0]
 
    pre_tag_font_size = ""
    padding_and_margin = ""
@@ -190,10 +189,6 @@ def home():
       <div id="metrics">
          <div class="num-container" id="num-container">
             <div class="num-item">
-               <h4 class="in-title">Daily Active Users</h4>
-               <span class="nums" data-count="{visitors_total}">0</span><span id="num-unit"></span><br>
-            </div>
-            <div class="num-item">
                <h4 class="in-title">Online Subscribers</h4>
                <span class="nums" data-count="{subscribers_total}">0</span><span id="num-unit"></span><br>
             </div>
@@ -235,4 +230,4 @@ def home():
    """
 
 if __name__ == '__main__':  
-   app.run('0.0.0.0',port=5000,debug=True)
+   app.run('0.0.0.0',port=5000,debug=False)

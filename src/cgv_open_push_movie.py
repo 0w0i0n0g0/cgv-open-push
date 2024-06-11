@@ -41,7 +41,7 @@ def movie_main(url, cookies, headers, json_data, target_name):
                             deleted_result += d[1] + ", "
                 #추가된 요소가 있으면
                 if added_result != "":
-                    save_log_info(f'{target_name} added item : {added_result}')
+                    save_log_info(f'{target_name} added item : {added_result.encode()}')
                     # 추가된 변경사항 푸시알림 보내기
                     try:
                         send_open_push(str(added_result), target_name)
@@ -55,7 +55,7 @@ def movie_main(url, cookies, headers, json_data, target_name):
                 #삭제된 요소가 있으면
                 if deleted_result != "":
                     #로그만 남기기
-                    save_log_info(f'{target_name} deleted item : {deleted_result}')
+                    save_log_info(f'{target_name} deleted item : {deleted_result.encode()}')
                 # response1 값은 변경된 값으로 초기화
                 response1 = response2
             # 5분마다 새로고침
