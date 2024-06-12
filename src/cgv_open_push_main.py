@@ -1,7 +1,6 @@
 import time
 import atexit
 import threading
-import subprocess
 from cgv_open_push_function import *
 from cgv_open_push_global_variable import *
 from cgv_open_push_movie import movie_main
@@ -13,7 +12,8 @@ handlers = [RotatingFileHandler('cgv-open-push.log', maxBytes=5*1024*1024, backu
 logging.basicConfig(handlers=handlers, level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
 # cgv_open_push_status.py 실행
-subprocess.Popen(['python', 'cgv_open_push_status.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+threading.Thread(target=run_cgv_open_push_status).start()
+time.sleep(1)
 
 # 영화 Thread 실행
 for data in enumerate(movie_json_data):
@@ -28,9 +28,9 @@ for data in enumerate(screen_json_data):
     time.sleep(1)
 
 # 서버 시작 알림 보내기
-send_push_to_ntfy("raspberrypi\n서버가 시작되었습니다.", "raspberrypi")
-send_push_to_private_ntfy("raspberrypi\n서버가 시작되었습니다.", "raspberrypi")
+send_push_to_ntfy("cgv-open-push\n서버가 시작되었습니다.", "cgv-open-push")
+send_push_to_private_ntfy("cgv-open-push\n서버가 시작되었습니다.", "cgv-open-push")
 
 # 종료 시 서버 종료 알림 보내기
-atexit.register(send_push_to_ntfy, "raspberrypi\n서버가 종료되었습니다.", "raspberrypi")
-atexit.register(send_push_to_private_ntfy, "raspberrypi\n서버가 종료되었습니다.", "raspberrypi")
+atexit.register(send_push_to_ntfy, "cgv-open-push\n서버가 종료되었습니다.", "cgv-open-push")
+atexit.register(send_push_to_private_ntfy, "cgv-open-push\n서버가 종료되었습니다.", "cgv-open-push")
