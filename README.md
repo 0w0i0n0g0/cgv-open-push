@@ -8,6 +8,8 @@
 
 By_0w0i0n0g0
 
+ImageBy_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-icon-new-email-message_34503708.htm#query=%EC%95%8C%EB%A6%BC%20%EC%95%84%EC%9D%B4%EC%BD%98&position=0&from_view=keyword&track=ais&uuid=0303dc60-e421-4177-8ab2-29b1326ae712">upklyak</a>
+
 <br>
 <br>
 
@@ -30,31 +32,25 @@ __꼭 읽어주세요!__
 
 이에 따라 ntfy 도메인이 __https://ntfy.wzero.dev__ 로 변경되었습니다.
 
-이전 구독들은 모두 삭제하고, 아래 [ 🔔 알림 받는 방법! ] 에 따라서 다시 구독해주세요!
+이전 도메인 http://serverkorea.duckdns.org 으로 등록했던 이전 구독들은 모두 삭제하고, 
 
-이전 도메인 http://serverkorea.duckdns.org 는 유예기간 후 2024/06/05 중에 서비스가 종료됩니다.
+아래 [ 🔔 알림 받는 방법! ] 에 따라서 다시 구독해주세요!
 
 <br>
 
-### 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/06/03 기준)
+### 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/06/20 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
-- 극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관
-- 퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관
-- 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관
+- 극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관 (종료 예정)
+- 퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관 (종료 예정)
+- 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관 (종료 예정)
 
 <br>
 
 ### 📄 최근 업데이트 내역
 
 [2024/06/03] 서버 이전 및 도메인 변경되었습니다.
-
-[2024/06/03] 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관 예매 오픈 알리미가 추가되었습니다.
-
-[2024/06/03] 혹성탈출-새로운시대 / 용산아이파크몰 / IMAX 관 예매 오픈 알리미가 삭제되었습니다.
-
-[2024/05/18] 용산아이파크몰 4DX관(용포디) 예매 오픈 알리미가 추가되었습니다.
 
 <br>
 
@@ -180,8 +176,7 @@ https://ntfy.wzero.dev
 
 ## 🎉 이제 다 끝났어요!
 
-__도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
-
+__유용하셨다면 Star⭐를 눌러주세요. 서비스를 유지하는데에 큰 힘이 됩니다!__
 <br>
 
 ### 알림은 이렇게 와요.
@@ -197,13 +192,39 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 <br>
 
 > 이전 알림 더보기
->> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-3.png)
+>> [용아맥 듄 파트2 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-3.png)
 >>
->> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-4.png)
+>> [용아맥 듄 파트2 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-4.png)
 >>
->> [CGV 용산아이파크몰 IMAX 관 듄 파트2 (5)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-5.png)
+>> [용아맥 듄 파트2 (5)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/dune-part2-5.png)
 >>
->> [CGV 용산아이파크몰 IMAX 관 고질라 X 콩: 뉴 엠파이어 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/godzilla-kong-1.png)
+>> [용아맥 고질라 X 콩: 뉴 엠파이어 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/godzilla-kong-1.png)
+>>
+>> [용아맥 혹성탈출: 새로운 시대 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/apes-1.png)
+>>
+>> [용아맥 혹성탈출: 새로운 시대 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/apes-2.png)
+>>
+>> [용아맥 퓨리오사 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/furiosa-1.png)
+>>
+>> [용아맥 퓨리오사 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/furiosa-2.png)
+>>
+>> [용아맥 극장판하이큐!!쓰레기장의결전 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-1.png)
+>>
+>> [용아맥 극장판하이큐!!쓰레기장의결전 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-2.png)
+>>
+>> [용아맥 극장판하이큐!!쓰레기장의결전 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-3.png)
+>>
+>> [용포디 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-4dx-1.png)
+>>
+>> [용포디 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-4dx-2.png)
+>>
+>> [용아맥 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-imax-1.png)
+>>
+>> [용아맥 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-imax-2.png)
+>>
+>> [용아맥 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-imax-3.png)
+>>
+>> [용아맥 (4)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-imax-4.png)
 
 <br>
 <br>
@@ -212,7 +233,7 @@ __도움이 되었다면 Star⭐를 눌러주세요. 큰 도움이 됩니다!__
 
 -  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 5분마다 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 ntfy를 통해 구독자들에게 푸시 알림을 전송합니다.
 
-- 서버의 원활한 작동을 위해 해외 IP 및 과도한 트래픽을 발생시키는 IP의 접속을 임의 차단하고 있습니다.
+- 서버의 원활한 작동을 위해 Cloudflare의 보호를 받고 있습니다. Cloudflare가 비정상적인 접근 또는 과도한 트래픽을 발생시킨다고 판단하면 접속이 차단될 수 있습니다.
 
 - 이 서비스는 ntfy를 통해 구독자에게 알림을 전송하기 위한 정보를 제외하고 사용자를 특정할 수 있는 형태의 개인정보를 저장하거나 업로드하지 않습니다.
 
@@ -259,7 +280,7 @@ services:
 
 ## Stack
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 <br>
 <br>
@@ -269,6 +290,3 @@ services:
 **AGPL-3.0 license**
 
 Read full license [here](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/LICENSE).
-
-logo image - 
-<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-icon-new-email-message_34503708.htm#query=%EC%95%8C%EB%A6%BC%20%EC%95%84%EC%9D%B4%EC%BD%98&position=0&from_view=keyword&track=ais&uuid=0303dc60-e421-4177-8ab2-29b1326ae712">작가 upklyak</a> 출처 Freepik
