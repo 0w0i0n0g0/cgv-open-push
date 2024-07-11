@@ -6,62 +6,47 @@
   <img src="./img/logo.png" width="160"/>
 </p>
 
-By_0w0i0n0g0
+by_0w0i0n0g0
 
-ImageBy_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-icon-new-email-message_34503708.htm#query=%EC%95%8C%EB%A6%BC%20%EC%95%84%EC%9D%B4%EC%BD%98&position=0&from_view=keyword&track=ais&uuid=0303dc60-e421-4177-8ab2-29b1326ae712">upklyak</a>
-
-<br>
-<br>
-
-## 서버가 작동 중인지 여기서 확인하세요!
-
-### [작동 여부 확인 페이지](https://stats.uptimerobot.com/dr29M3hiXt)
-
-###  [서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
+image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-icon-new-email-message_34503708.htm#query=%EC%95%8C%EB%A6%BC%20%EC%95%84%EC%9D%B4%EC%BD%98&position=0&from_view=keyword&track=ais&uuid=0303dc60-e421-4177-8ab2-29b1326ae712">upklyak</a>
 
 </div>
 
 <br>
 <br>
 
-### 📢 알림
+### 👀 서버가 작동 중인지 여기서 확인하세요!
 
-__꼭 읽어주세요!__
-
-2024/06/03부로 __서버 이전__ 되었습니다.
-
-이에 따라 ntfy 도메인이 __https://ntfy.wzero.dev__ 로 변경되었습니다.
-
-이전 도메인 http://serverkorea.duckdns.org 으로 등록했던 이전 구독들은 모두 삭제하고, 
-
-아래 [ 🔔 알림 받는 방법! ] 에 따라서 다시 구독해주세요!
+[서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
 
 <br>
 
-### 🔎 현재 예매 오픈 알리미가 지켜보고 있는 영화는? (2024/06/20 기준)
+### 📢 알림
+
+추가 건의나 문의사항은 [issues](https://github.com/0w0i0n0g0/cgv-open-push/issues)에 남겨주시면 최대한 빠르게 검토하도록 하겠습니다.
+
+<br>
+
+### 🔎 현재 동작하고 있는 알리미는?
+
+> (2024/07/11 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
-- 극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관 (종료 예정)
-- 퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관 (종료 예정)
-- 나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관 (종료 예정)
+- 서면 IMAX 예매 오픈 알리미
 
 <br>
 
 ### 📄 최근 업데이트 내역
 
-[2024/06/03] 서버 이전 및 도메인 변경되었습니다.
+서면 IMAX 예매 오픈 알리미가 요청에 따라 추가되었습니다.
 
-<br>
-
-### 추가 건의나 문의사항은 [issues](https://github.com/0w0i0n0g0/cgv-open-push/issues)에 남겨주세요!
-
-https://github.com/0w0i0n0g0/cgv-open-push/issues
+극장판하이큐!!쓰레기장의결전, 퓨리오사-매드맥스사가, 나쁜녀석들-라이드오어다이 알리미가 상영이 종료됨에 따라 삭제되었습니다.
 
 <br>
 <br>
 
-## 🔔 알림 받는 방법!
+## 알림 받는 방법!
 
 ### ntfy 앱을 다운받으세요.
 
@@ -79,7 +64,7 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 먼저 밑의 예시와 같이 ```Topic name``` 에 아래의 **구독 리스트** 중에서 알림받고 싶은 것을 골라 입력해주세요. 
 
-> 정확히 입력해야 합니다.
+> 오타없이 정확히 입력해야 합니다.
 
 <p align="center">
   <img src="./img/topic-name.png" width="300"/>
@@ -95,9 +80,7 @@ https://github.com/0w0i0n0g0/cgv-open-push/issues
 
 - **용아맥 예매 오픈 알리미**
 
-이 구독은 용아맥에 새로운 영화가 등록되거나, 새 날짜의 예매가 오픈되었을 때 알려줍니다!
-
-다만 특정 영화의 예매 오픈 알림 전송에는 누락이 있을 수 있으니, 기다리고 있는 영화가 있다면 밑의 알리미를 구독해주세요.
+이 구독은 용산아이파크몰 CGV IMAX관에 새로운 영화가 등록되거나, 예매가 오픈되었을 때 알려줍니다!
 
 ```
 YONGSAN-IMAX
@@ -109,9 +92,7 @@ YONGSAN-IMAX
 
 - **용포디 예매 오픈 알리미**
 
-이 구독은 용포디에 새로운 영화가 등록되거나, 새 날짜의 예매가 오픈되었을 때 알려줍니다!
-
-다만 특정 영화의 예매 오픈 알림 전송에는 누락이 있을 수 있으니, 기다리고 있는 영화가 있다면 밑의 알리미를 구독해주세요.
+이 구독은 용산아이파크몰 CGV 4DX관에 새로운 영화가 등록되거나, 예매가 오픈되었을 때 알려줍니다!
 
 ```
 YONGSAN-4DX
@@ -121,30 +102,12 @@ YONGSAN-4DX
 
 <br>
 
-- **극장판하이큐!!쓰레기장의결전 / 용산아이파크몰 / IMAX 관**
+- **서면 IMAX 예매 오픈 알리미**
+
+이 구독은 부산 서면 CGV IMAX관에 새로운 영화가 등록되거나, 예매가 오픈되었을 때 알려줍니다!
 
 ```
-HAIKU-YONGSAN-IMAX
-```
-
-> 복사 붙여넣기 해주세요.
-
-<br>
-
-- **퓨리오사-매드맥스사가 / 용산아이파크몰 / IMAX 관**
-
-```
-FURIOSA-YONGSAN-IMAX
-```
-
-> 복사 붙여넣기 해주세요.
-
-<br>
-
-- **나쁜녀석들-라이드오어다이 / 용산아이파크몰 / IMAX 관**
-
-```
-BADBOYS-YONGSAN-IMAX
+SEOMYEON-IMAX
 ```
 
 > 복사 붙여넣기 해주세요.
@@ -174,9 +137,9 @@ https://ntfy.wzero.dev
 <br>
 <br>
 
-## 🎉 이제 다 끝났어요!
+## 이제 다 끝났어요!
 
-__유용하셨다면 Star⭐를 눌러주세요. 서비스를 유지하는데에 큰 힘이 됩니다!__
+__🎉 유용하셨다면 Star⭐를 눌러주세요. 서비스를 유지하는데에 큰 힘이 됩니다!__
 <br>
 
 ### 알림은 이렇게 와요.
@@ -208,11 +171,15 @@ __유용하셨다면 Star⭐를 눌러주세요. 서비스를 유지하는데에
 >>
 >> [용아맥 퓨리오사 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/furiosa-2.png)
 >>
+>> [용아맥 퓨리오사 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/furiosa-3.png)
+>>
 >> [용아맥 극장판하이큐!!쓰레기장의결전 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-1.png)
 >>
 >> [용아맥 극장판하이큐!!쓰레기장의결전 (2)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-2.png)
 >>
 >> [용아맥 극장판하이큐!!쓰레기장의결전 (3)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/haiku-3.png)
+>>
+>> [용아맥 나쁜녀석들-라이드오어다이 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/badboys-1.png)
 >>
 >> [용포디 (1)](https://github.com/0w0i0n0g0/cgv-open-push/blob/main/img/previous-push-notifications/yongsan-4dx-1.png)
 >>
@@ -247,14 +214,14 @@ __유용하셨다면 Star⭐를 눌러주세요. 서비스를 유지하는데에
 ## Features
 
 - Send Push Notification
-  - https://ntfy.wingzero.dev/{target_name}
+  - https://ntfy.wzero.dev/{target_name}
     - Push notification when new date detected from *target_name*.
 
 - Health Check
-  - https://cgv-open-push.wingzero.dev
+  - https://cgv-open-push.wzero.dev
     - Server status
   - https://ntfy.sh/CGVOPENPUSHSERVER
-  - https://ntfy.wingzero.dev/SERVER
+  - https://ntfy.wzero.dev/SERVER
     - Push notification when server start, end and error.
 
 - Docker Compose
@@ -280,7 +247,7 @@ services:
 
 ## Stack
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Docker](https://img.shields.io/badge/docker-0db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![ntfy](https://img.shields.io/badge/ntfy-317F6F.svg?style=for-the-badge&logo=ntfy&logoColor=white)
 
 <br>
 <br>
