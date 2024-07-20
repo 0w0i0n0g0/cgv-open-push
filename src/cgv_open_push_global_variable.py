@@ -69,19 +69,19 @@ movie_json_data = [
     #     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
     #     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     # },
-    # 극장판하이큐!!쓰레기장의결전 용산아이파크몰 IMAX관
-    {
-        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
-        'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
-        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
-        'MovieGroupCd': 'rScFvvwEyPojN0wB3iaAJg==',
-        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
-        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
-    },
+    # # 극장판하이큐!!쓰레기장의결전 용산아이파크몰 IMAX관
+    # {
+    #     'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    #     'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    #     'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    #     'MovieGroupCd': 'rScFvvwEyPojN0wB3iaAJg==',
+    #     'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    #     'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    # },
     # # 혹성탈출-새로운시대 용산아이파크몰 IMAX관
     # {
     #     'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
@@ -95,12 +95,38 @@ movie_json_data = [
     #     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
     #     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     # },
-    #퓨리오사-매드맥스사가 용산아이파크몰 IMAX관
+    # #퓨리오사-매드맥스사가 용산아이파크몰 IMAX관
+    # {
+    #     'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    #     'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    #     'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    #     'MovieGroupCd': 'Eclx6HdxURDc7ZSCEC1oVg==',
+    #     'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    #     'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+    #     'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    #     'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    # },
+    # # 나쁜녀석들-라이드오어다이 용산아이파크몰 IMAX관
+    # {
+    # 'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+    # 'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+    # 'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+    # 'MovieGroupCd': 'mgqEaWmqb6vUNc0jFeR+oQ==',
+    # 'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+    # 'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
+    # 'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    # 'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    # 'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+    # 'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    # },
+    # 명탐정코난-100만달러의펜타그램 용산아이파크몰 IMAX관
     {
         'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
         'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
         'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
-        'MovieGroupCd': 'Eclx6HdxURDc7ZSCEC1oVg==',
+        'MovieGroupCd': 'sotE7BPGwguNFSYUhbmAmg==',
         'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
         'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
         'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
@@ -108,35 +134,23 @@ movie_json_data = [
         'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
         'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
-    # 나쁜녀석들-라이드오어다이
-    {
-    'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
-    'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
-    'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
-    'MovieGroupCd': 'mgqEaWmqb6vUNc0jFeR+oQ==',
-    'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
-    'MovieTypeCd': '/Saxvehmz4RPKZDKNMvSKQ==',
-    'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
-    'Language': 'zqWM417GS6dxQ7CIf65+iA==',
-    },
 ]
 
 # 변경사항을 확인할 타겟 이름 (json_data 순서대로)
 movie_target_name = [
     # "DUNE-PART2-YONGSAN-IMAX",
     # "GODZILLA-KONG",
-    "HAIKU-YONGSAN-IMAX",
-    #"APES-YONGSAN-IMAX",
-    "FURIOSA-YONGSAN-IMAX",
-    "BADBOYS-YONGSAN-IMAX"
+    # "HAIKU-YONGSAN-IMAX",
+    # "APES-YONGSAN-IMAX",
+    # "FURIOSA-YONGSAN-IMAX",
+    # "BADBOYS-YONGSAN-IMAX",
+    "CONAN-YONGSAN-IMAX",
 ]
 
 
 
 ##################################################
-#cgv_open_push_screen.py
+# cgv_open_push_screen.py
 
 screen_url = 'http://ticket.cgv.co.kr/CGV2011/RIA/CJ000.aspx/CJ_TICKET_SCHEDULE_TOTAL_PLAY_YMD'
 
@@ -194,9 +208,37 @@ screen_json_data = [
         'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
         'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
+    # 서면 IMAX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': 'VCtDd13tWp85DXhl1ss+bw==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
+    # 영등포 IMAX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': 'Y5qC4mHnqFvPnE5/3487AQ==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
 ]
 
 screen_target_name = [
     "YONGSAN-IMAX",
     "YONGSAN-4DX",
+    "SEOMYEON-IMAX",
+    "YEONGDEUNGPO-IMAX",
 ]
