@@ -151,7 +151,7 @@ def home():
       font: bold {num_item_font_size}em/1 'arial';
       color: #444444;
    }}
-      #health-check {{
+   #health-check {{
       text-align: center;
       background-color: #f5f5f5; 
       margin: {padding_and_margin}vw; 
