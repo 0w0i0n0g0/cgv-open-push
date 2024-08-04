@@ -35,13 +35,14 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 - 용포디 예매 오픈 알리미
 - 서면 IMAX 예매 오픈 알리미
 - 영등포 IMAX 예매 오픈 알리미
+- 영등포 SCREENX 예매 오픈 알리미
 - 용아맥 명탐정코난-100만달러의펜타그램
 
 <br>
 
 ### 📄 최근 업데이트 내역
 
-영등포 IMAX 예매 오픈 알리미와 용아맥 명탐정코난-100만달러의펜타그램이 요청에 따라 추가되었습니다.
+영등포 SCREENX 예매 오픈 알리미가 요청에 따라 추가되었습니다.
 
 <br>
 <br>
@@ -120,6 +121,18 @@ SEOMYEON-IMAX
 
 ```
 YEONGDEUNGPO-IMAX
+```
+
+> 복사 붙여넣기 해주세요.
+
+<br>
+
+- **영등포 SCREENX 예매 오픈 알리미**
+
+이 구독은 영등포 CGV SCREENX관에 새로운 영화가 등록되거나, 예매가 오픈되었을 때 알려줍니다!
+
+```
+YEONGDEUNGPO-SCREENX
 ```
 
 > 복사 붙여넣기 해주세요.
