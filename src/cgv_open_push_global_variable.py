@@ -234,6 +234,19 @@ screen_json_data = [
         'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
         'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
+    # 영등포 SCREENX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': 'Y5qC4mHnqFvPnE5/3487AQ==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': '1WlMxB/T2xWstAhFsiNSfQ==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
 ]
 
 screen_target_name = [
@@ -241,4 +254,5 @@ screen_target_name = [
     "YONGSAN-4DX",
     "SEOMYEON-IMAX",
     "YEONGDEUNGPO-IMAX",
+    "YEONGDEUNGPO-SCREENX",
 ]
