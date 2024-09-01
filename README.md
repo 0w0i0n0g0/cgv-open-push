@@ -29,7 +29,7 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 ### 🔎 현재 동작하고 있는 알리미는?
 
-> (2024/07/15 기준)
+> (2024/09/01 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
