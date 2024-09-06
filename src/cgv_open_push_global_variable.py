@@ -247,6 +247,19 @@ screen_json_data = [
         'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
         'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
+    # 왕십리 IMAX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': '2ziBKjUqqpsaZ8ii0eHHyg==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
 ]
 
 screen_target_name = [
@@ -255,4 +268,5 @@ screen_target_name = [
     "SEOMYEON-IMAX",
     "YEONGDEUNGPO-IMAX",
     "YEONGDEUNGPO-SCREENX",
+    "WANGSIMNI-IMAX",
 ]
