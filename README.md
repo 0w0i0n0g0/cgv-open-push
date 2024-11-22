@@ -29,7 +29,7 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 ### 🔎 현재 동작하고 있는 알리미는?
 
-> (2024/09/07 기준)
+> (2024/11/22 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
@@ -42,7 +42,9 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 ### 📄 최근 업데이트 내역
 
-왕십리 IMAX 예매 오픈 알리미가 요청에 따라 추가되었습니다.
+**디스코드 알리미가 개발중에 있습니다!** 곧 배포될 예정입니다.
+
+> 디스코드 알리미 배포 후, 몇 일 뒤에 ntfy 알림 서버는 중단될 예정입니다.
 
 <br>
 <br>
