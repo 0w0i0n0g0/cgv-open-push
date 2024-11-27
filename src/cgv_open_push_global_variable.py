@@ -2,10 +2,23 @@ import os
 
 ##################################################
 # ENV
-ntfy_token = os.environ["NTFY_TOKEN"]
-private_ntfy_server_address = os.environ["PRIVATE_NTFY_SERVER_ADDRESS"]
-private_ntfy_prometheus_address = os.environ["PRIVATE_NTFY_PROMETHEUS_ADDRESS"]
+discord_bot_token = os.environ["DISCORD_BOT_TOKEN"]
 
+
+
+##################################################
+# discord channel id
+
+discord_channel_id_dictionary = {
+    "LOG": 1309139853631557632,
+    "ANNOUNCEMENT": 1309141746978131988,
+    "YONGSAN-IMAX": 1309142039144955924,
+    "YONGSAN-4DX": 1309141227450531860,
+    "SEOMYEON-IMAX": 1309145186194165760,
+    "YEONGDEUNGPO-IMAX": 1309145226299965491,
+    "YEONGDEUNGPO-SCREENX": 1309145269069418567,
+    "WANGSIMNI-IMAX": 1309145306939789383,
+}
 
 
 ##################################################
