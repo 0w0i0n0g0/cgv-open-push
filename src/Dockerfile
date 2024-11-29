@@ -6,12 +6,8 @@ WORKDIR /
 
 COPY * .
 
-# ntfy token e.g. "Bearer tk_abcdefghijklmnopqrstuvwxyz"
-ENV NTFY_TOKEN=""
-# private ntfy server address e.g. "https://ntfy.sh"
-ENV PRIVATE_NTFY_SERVER_ADDRESS=""
-# private ntfy prometheus address e.g. "https://ntfy.sh/metrics"
-ENV PRIVATE_NTFY_PROMETHEUS_ADDRESS=""
+# discord bot token
+ENV DISCORD_BOT_TOKEN=""
 
 RUN pip install -r requirements.txt
 
