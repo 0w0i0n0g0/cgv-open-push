@@ -21,9 +21,15 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 <br>
 
+### 👀 서버가 작동 중인지 여기서 확인하세요!
+
+[서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
+
+<br>
+
 ### 🔎 현재 동작하고 있는 알리미는?
 
-> (2024/11/25 기준)
+> (2024/12/02 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
@@ -38,7 +44,7 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 **디스코드 알림 서버가 오픈되었습니다!**
 
-기존 ntfy 알림 서버는 2024/12/01부터 지원이 중단될 예정입니다.
+기존 ntfy 알림 서버는 2024/12/02부터 지원이 중단되었습니다.
 
 원활한 사용을 위해서 아래 *알림 받는 방법!* 을 참고해주세요.
 
