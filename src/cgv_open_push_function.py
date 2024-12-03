@@ -7,7 +7,6 @@ import logging
 import datetime
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-from cgv_open_push_global_variable import ntfy_token, private_ntfy_server_address
 
 def run_cgv_open_push_status():
     while True:
@@ -60,40 +59,6 @@ def get_request_to_cgv_api(url, cookies, headers, json_data, target_name):
     xml_string = data['d']['DATA']
     # 응답결과 리턴
     return xml_string
-
-# 예매 오픈 푸시 알림 보내기
-def send_open_push(result :str, target_name :str):
-    headers = {
-        # ntfy 서버 토큰
-        'Authorization': ntfy_token,
-        "Title": "예매 오픈 알림".encode(),
-    }
-    data = f'{result}\n{target_name}'.encode()
-    response = requests.post(f'{private_ntfy_server_address}/{target_name}', headers=headers, data=data)
-    save_log_info(f'{target_name} send_ntfy_push : {response.status_code}')
-    return response.status_code
-
-# 개인 ntfy에 푸시 알림 보내기
-def send_push_to_private_ntfy(text :str, target_name :str):
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        # ntfy 서버 토큰
-        'Authorization': ntfy_token,
-    }
-    data = text.encode()
-    response = requests.post(f'{private_ntfy_server_address}/SERVER', headers=headers, data=data)
-    save_log_info(f'{target_name} send_push_to_private_ntfy : {response.status_code}')
-    return response.status_code
-
-# ntfy에 푸시 알림 보내기
-def send_push_to_ntfy(text :str, target_name :str):
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-    }
-    data = text.encode()
-    response = requests.post('http://ntfy.sh/CGVOPENPUSHSERVER', headers=headers, data=data)
-    save_log_info(f'{target_name} send_push_to_ntfy : {response.status_code}')
-    return response.status_code
 
 # XML 문자열을 받아서 PlayDays 태그를 XML 문자열로 반환
 def extract_playdays(xml_string):
