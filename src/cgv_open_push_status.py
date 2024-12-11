@@ -1,9 +1,5 @@
-import re
-import requests
 from flask import Flask, request
 from datetime import datetime
-from cgv_open_push_global_variable import private_ntfy_prometheus_address
-from cgv_open_push_function import save_log_error
 
 def get_time_difference_from_log_file(log_file):
    try:
@@ -41,19 +37,6 @@ def check_user_is_mobile_or_not():
    else:
       return False # 컴퓨터
 
-def get_metrics():
-   result = []
-   try:
-    with requests.get(private_ntfy_prometheus_address, timeout=3) as response:
-      response.raise_for_status()
-      match = re.search(r"ntfy_subscribers_total\s+(\d+)", response.text)
-      if match:
-         result.append(int(match.group(1)))
-   except Exception as e:
-      save_log_error(f"ERROR (Exception) at def get_metrics(): at cgv_open_push_status: {e}")
-      result = [-1]
-   return result
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -69,18 +52,13 @@ def home():
       health_color = "#ff0000"
 
    log = last_n_lines_from_log_file("cgv-open-push.log", 50)
-   metrics = get_metrics()
-   subscribers_total = metrics[0]
 
    pre_tag_font_size = ""
    padding_and_margin = ""
-   num_item_font_size = ""
    if check_user_is_mobile_or_not():
-      num_item_font_size = "4"
       pre_tag_font_size = "1"
       padding_and_margin = "2"
    else:
-      num_item_font_size = "5"
       pre_tag_font_size = "1.5"
       padding_and_margin = "1"
 
@@ -90,7 +68,9 @@ def home():
       height: 100%;
       overflow: hidden;
       margin:0 auto;
-      touch-action: none;    
+      touch-action: none;
+      justify-content: center;
+      align-items: center;
    }}
    progress {{ 
       appearance: none;
@@ -127,30 +107,6 @@ def home():
       padding: {padding_and_margin}vw; 
       font-family: "Nanum Gothic Coding", monospace;
    }}
-   .num-container {{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      align-items: center;
-      }}
-   .num-item {{
-      text-align: center;
-      padding-right: 10%;
-      padding-left: 10%;
-      padding-top: 10px;
-      padding-bottom: 10px;
-   }}
-   .in-title {{
-      font: 1.7em/1 'arial';
-      color: gray;
-      font-weight: 600;
-      margin-top: 10px;
-      margin-bottom: 0;
-   }}
-   .nums {{
-      font: bold {num_item_font_size}em/1 'arial';
-      color: #444444;
-   }}
    #health-check {{
       text-align: center;
       background-color: #f5f5f5; 
@@ -159,14 +115,8 @@ def home():
    }}
    #log {{
       margin:0 auto; 
-      max-height: 100vh;
+      max-height: 65vh;
       overflow-y: auto;
-   }}
-   #metrics {{
-      background-color: #f5f5f5; 
-      margin: {padding_and_margin}vw; 
-      align-items: center;
-      justify-content: center;
    }}
    """
 
@@ -185,15 +135,6 @@ def home():
    </head>
    <body>
       <h1>CGV 예매 오픈 알리미</h1>
-      <h2>Metrics</h2>
-      <div id="metrics">
-         <div class="num-container" id="num-container">
-            <div class="num-item">
-               <h4 class="in-title">Online Subscribers</h4>
-               <span class="nums" data-count="{subscribers_total}">0</span><span id="num-unit"></span><br>
-            </div>
-         </div>
-      </div>
       <h2>Server Health Check</h2>
       <div id="health-check">
          <progress value='200' max='{time_diff}'></progress>
@@ -202,29 +143,6 @@ def home():
       <div id="log">
          <pre>{log}</pre>
       </div>
-      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
-      <script>
-         //숫자 카운트 애니메이션
-         $('.nums').each(function () {{
-               const $this = $(this),
-                  countTo = $this.attr('data-count');
-
-               $({{
-                  countNum: $this.text()
-               }}).animate({{
-                  countNum: countTo
-               }}, {{
-                  duration: 2000,
-                  easing: 'swing',
-                  step: function () {{
-                     $this.text(Math.floor(this.countNum));
-                  }},
-                  complete: function () {{
-                     $this.text(this.countNum.toString().replace(/\B(?=(\d{{3}})+(?!\d))/g, ','));
-                  }}
-               }});
-         }});
-      </script>
    </body>
    </html>
    """
