@@ -21,6 +21,12 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 <br>
 
+### 🎥 메가박스 예매 오픈 알리미도 확인해보세요!
+
+[메가박스 예매 오픈 알리미](https://github.com/0w0i0n0g0/megabox-open-push)
+
+<br>
+
 ### 👀 서버가 작동 중인지 여기서 확인하세요!
 
 [서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
