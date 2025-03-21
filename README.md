@@ -35,10 +35,13 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 ### 🔎 현재 동작하고 있는 알리미는?
 
-> (2024/12/02 기준)
+> (2025/03/21 기준)
 
 - 용아맥 예매 오픈 알리미
 - 용포디 예매 오픈 알리미
+- 용산 SCREENX 예매 오픈 알리미
+- 여의도 4DX 예매 오픈 알리미
+- 센텀 IMAX 예매 오픈 알리미
 - 서면 IMAX 예매 오픈 알리미
 - 영등포 IMAX 예매 오픈 알리미
 - 영등포 SCREENX 예매 오픈 알리미
