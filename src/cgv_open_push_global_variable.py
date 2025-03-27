@@ -14,11 +14,15 @@ discord_channel_id_dictionary = {
     "ANNOUNCEMENT": 1309141746978131988,
     "YONGSAN-IMAX": 1309142039144955924,
     "YONGSAN-4DX": 1309141227450531860,
+    "YONGSAN-SCREENX": 1352468374025670727,
+    "YEOUIDO-4DX": 1352468453960974367,
+    "CENTUM-IMAX": 1352468531429769287,
     "SEOMYEON-IMAX": 1309145186194165760,
     "YEONGDEUNGPO-IMAX": 1309145226299965491,
     "YEONGDEUNGPO-SCREENX": 1309145269069418567,
     "WANGSIMNI-IMAX": 1309145306939789383,
 }
+
 
 
 ##################################################
@@ -221,6 +225,45 @@ screen_json_data = [
         'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
         'Language': 'zqWM417GS6dxQ7CIf65+iA==',
     },
+    # 용산아이파크몰 SCREENX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': 'LMP+XuzWskJLFG41YQ7HGA==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': '1WlMxB/T2xWstAhFsiNSfQ==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
+    # 여의도 4DX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': '5f4GX7Z6gNcCnYik++dJcA==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': '9sxNW0kL/ZE3ioyEu1Em8w==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
+    # 센텀 IMAX관
+    {
+        'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
+        'TheaterCd': '2jX4VAQPhAUY/gxvZBhDdQ==',
+        'ISNormal': 'ECFppiyFz/nvSGsg7VwPQw==',
+        'MovieGroupCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'ScreenRatingCd': 'kXwoR3tnLM/+Tu0BILP3Qg==',
+        'MovieTypeCd': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Subtitle_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'SOUNDX_YN': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Third_Attr_CD': 'nG6tVgEQPGU2GvOIdnwTjg==',
+        'Language': 'zqWM417GS6dxQ7CIf65+iA==',
+    },
     # 서면 IMAX관
     {
         'REQSITE': 'x02PG4EcdFrHKluSEQQh4A==',
@@ -278,6 +321,9 @@ screen_json_data = [
 screen_target_name = [
     "YONGSAN-IMAX",
     "YONGSAN-4DX",
+    "YONGSAN-SCREENX",
+    "YEOUIDO-4DX",
+    "CENTUM-IMAX",
     "SEOMYEON-IMAX",
     "YEONGDEUNGPO-IMAX",
     "YEONGDEUNGPO-SCREENX",
